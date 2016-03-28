@@ -65,16 +65,15 @@ public class Program
     	}
     	
     	public void escribir(){
-    		System.out.print("\nFactores Primos " + this.numero + ":  ");
+    		System.out.print("Factores Primos " + this.numero + ": ");
     		Iterator<Integer> iterador = listaDivisoresPrimos.iterator();
     		while(iterador.hasNext()){
     			Integer numeroAEscribir = iterador.next();
     			System.out.print(numeroAEscribir);
-    			if(iterador.hasNext()){
-    				System.out.print(" ; ");
-    			}else{
-    				System.out.print("\n\n");
+    			System.out.print(" ");
+    			if(!(iterador.hasNext())){
+    				System.out.print("\n\n");	
+    				}
     			}
-    		}
     	}
 }
