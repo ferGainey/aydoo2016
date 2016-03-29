@@ -1,5 +1,7 @@
 package ar.edu.untref.aydoo;
 
+import java.util.Iterator;
+
 import org.junit.Test;
 
 import junit.framework.Assert;
@@ -65,5 +67,23 @@ public class MaquinaExpendedoraDeBebidasTest {
 		Assert.assertEquals(true, vasoActual.getContenido().contains("cafe"));
 		Assert.assertEquals(true, vasoActual.getContenido().contains("leche"));
 		Assert.assertEquals(false, vasoActual.getContenido().contains("azucar"));
+	}
+	
+	@Test
+	public void hacerCafeConLecheConAzucar(){
+		MaquinaExpendedoraDeBebidas miMaquina = new MaquinaExpendedoraDeBebidas();
+		Vaso vasoActual = new Vaso();
+		miMaquina.hacerCafeConLecheConNDeAzucar(vasoActual, 2);
+		Assert.assertEquals(true, vasoActual.getContenido().contains("cafe"));
+		Assert.assertEquals(true, vasoActual.getContenido().contains("leche"));
+		Assert.assertEquals(true, vasoActual.getContenido().contains("azucar"));
+		Iterator<String> iterador = vasoActual.getContenido().iterator();
+		int cantidadDeAzucar=0;
+		while(iterador.hasNext()){
+			if(iterador.next().equals("azucar")){
+				cantidadDeAzucar++;
+			}
+		}
+		Assert.assertEquals(2, cantidadDeAzucar);
 	}
 }
