@@ -62,8 +62,7 @@ public class MaquinaExpendedoraDeBebidasTest {
 	@Test
 	public void hacerCafeConLecheSinAzucar(){
 		MaquinaExpendedoraDeBebidas miMaquina = new MaquinaExpendedoraDeBebidas();
-		Vaso vasoActual = new Vaso();
-		miMaquina.hacerCafeConLecheConNDeAzucar(vasoActual, 0);
+		Vaso vasoActual = miMaquina.hacerCafeConLecheConNDeAzucar(0);
 		Assert.assertEquals(true, vasoActual.getContenido().contains("cafe"));
 		Assert.assertEquals(true, vasoActual.getContenido().contains("leche"));
 		Assert.assertEquals(false, vasoActual.getContenido().contains("azucar"));
@@ -72,8 +71,7 @@ public class MaquinaExpendedoraDeBebidasTest {
 	@Test
 	public void hacerCafeConLecheConAzucar(){
 		MaquinaExpendedoraDeBebidas miMaquina = new MaquinaExpendedoraDeBebidas();
-		Vaso vasoActual = new Vaso();
-		miMaquina.hacerCafeConLecheConNDeAzucar(vasoActual, 2);
+		Vaso vasoActual=miMaquina.hacerCafeConLecheConNDeAzucar(2);
 		Assert.assertEquals(true, vasoActual.getContenido().contains("cafe"));
 		Assert.assertEquals(true, vasoActual.getContenido().contains("leche"));
 		Assert.assertEquals(true, vasoActual.getContenido().contains("azucar"));
