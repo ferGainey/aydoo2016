@@ -39,4 +39,13 @@ public class MaquinaExpendedoraDeBebidasTest {
 		Assert.assertEquals("azucar", miVaso2.getContenido().get(1));
 		Assert.assertEquals("azucar", miVaso2.getContenido().get(2));
 	}
+	
+	@Test
+	public void ponerNadaDeAzucar(){
+		Vaso miVaso = new Vaso();
+		Azucarero miAzucarero = new Azucarero();
+		miAzucarero.ponerNEnEsteVaso(miVaso, 0);
+		Assert.assertEquals(0, miVaso.getContenido().size());
+	}
+	
 }
