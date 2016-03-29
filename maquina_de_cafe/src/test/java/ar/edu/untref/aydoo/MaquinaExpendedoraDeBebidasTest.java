@@ -56,4 +56,14 @@ public class MaquinaExpendedoraDeBebidasTest {
 		miAzucarero.ponerNEnEsteVaso(miVaso, -10);
 		Assert.assertEquals(0, miVaso.getContenido().size());
 	}
+	
+	@Test
+	public void hacerCafeConLecheSinAzucar(){
+		MaquinaExpendedoraDeBebidas miMaquina = new MaquinaExpendedoraDeBebidas();
+		Vaso vasoActual = new Vaso();
+		miMaquina.hacerCafeConLecheConNDeAzucar(vasoActual, 0);
+		Assert.assertEquals(true, vasoActual.getContenido().contains("cafe"));
+		Assert.assertEquals(true, vasoActual.getContenido().contains("leche"));
+		Assert.assertEquals(false, vasoActual.getContenido().contains("azucar"));
+	}
 }
