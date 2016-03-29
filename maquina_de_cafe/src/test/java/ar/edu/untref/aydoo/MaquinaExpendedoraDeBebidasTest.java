@@ -13,6 +13,14 @@ public class MaquinaExpendedoraDeBebidasTest {
 		miCafetero.prepararEnEsteVaso(miVaso);
 		Assert.assertEquals(1, miVaso.getContenido().size());
 		Assert.assertEquals("cafe", miVaso.getContenido().get(0));
-		
+	}
+	
+	@Test
+	public void ponerLeche(){
+		Vaso miVaso = new Vaso();
+		Lechero miLechero = new Lechero();
+		miLechero.prepararEnEsteVaso(miVaso);
+		Assert.assertEquals(1, miVaso.getContenido().size());
+		Assert.assertEquals("leche", miVaso.getContenido().get(0));
 	}
 }
