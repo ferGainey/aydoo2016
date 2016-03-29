@@ -48,4 +48,12 @@ public class MaquinaExpendedoraDeBebidasTest {
 		Assert.assertEquals(0, miVaso.getContenido().size());
 	}
 	
+	//en este caso no agrega nada de azucar
+	@Test
+	public void pedirCantidadNegativaDeAzucar(){
+		Vaso miVaso = new Vaso();
+		Azucarero miAzucarero = new Azucarero();
+		miAzucarero.ponerNEnEsteVaso(miVaso, -10);
+		Assert.assertEquals(0, miVaso.getContenido().size());
+	}
 }
