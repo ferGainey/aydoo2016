@@ -49,4 +49,10 @@ public class IntegrationTest
         this.miBoleta.setCandidato(pepe);
         Assert.assertEquals(pepe, this.miBoleta.getCandidato());
     }
+    
+    @Test
+    public void obtenerNombreCandidato()
+    {
+    	Assert.assertEquals("Pepe", this.pepe.getNombre());
+    }
 }
