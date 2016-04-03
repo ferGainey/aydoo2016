@@ -29,6 +29,10 @@ public class MesaDeVotacion {
 
 	public void emitirVoto(Boleta boleta) {
 		this.urna.recibirVoto(boleta);
-		
+	}
+	
+	public void cerrarMesa()
+	{
+		this.provincia.getCentroDeComputoProvincial().agregarUrna(this.urna);
 	}
 }
