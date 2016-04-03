@@ -88,4 +88,21 @@ public class IntegrationTest
     	Assert.assertEquals(true, this.juntaElectoral.getCandidatosAprobados().contains(javier));
     	Assert.assertEquals(true, this.juntaElectoral.getCandidatosAprobados().contains(matias));
     }
+    
+    @Test
+    public void laJuntaElectoralNoTieneEnSuListaCandidatosNoAprobados()
+    {
+    	Assert.assertEquals(false, this.juntaElectoral.getCandidatosAprobados().contains(jorge));
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
