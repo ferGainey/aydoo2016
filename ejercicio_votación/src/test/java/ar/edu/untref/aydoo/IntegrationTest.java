@@ -19,6 +19,12 @@ public class IntegrationTest
 	private Partido frenteSur;
 	private Partido frenteUnido;
 	private JuntaElectoral juntaElectoral;
+	private MesaDeVotacion mesaDeVotacion1;
+	private MesaDeVotacion mesaDeVotacion2;
+	private MesaDeVotacion mesaDeVotacion3;
+	private Provincia buenosAires;
+	private Provincia jujuy;
+	private Provincia chubut;
 	
 	@Before
 	public void inicializar()
@@ -41,7 +47,10 @@ public class IntegrationTest
 		this.juntaElectoral.agregarCandidatoAprobado(this.matias);
 		this.juntaElectoral.agregarCandidatoAprobado(this.cosme);
 		this.miBoleta = new Boleta(this.juntaElectoral);
-		
+		this.buenosAires = new Provincia("Buenos Aires");
+		this.jujuy = new Provincia("Jujuy");
+		this.chubut = new Provincia("Chubut");
+		this.mesaDeVotacion1 = new MesaDeVotacion(buenosAires);
 		
 	}
 	
@@ -100,6 +109,12 @@ public class IntegrationTest
     {
     	this.juntaElectoral.eliminarCandidatoAprobado(pepe);
     	Assert.assertEquals(false, this.juntaElectoral.getCandidatosAprobados().contains(pepe));
+    }
+    
+    @Test
+    public void obtenerProvinciaDeLaMesaDeVOtacion()
+    {
+    	Assert.assertEquals(buenosAires, this.mesaDeVotacion1.getProvincia());
     }
 }
 
