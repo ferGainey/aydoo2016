@@ -94,6 +94,13 @@ public class IntegrationTest
     {
     	Assert.assertEquals(false, this.juntaElectoral.getCandidatosAprobados().contains(jorge));
     }
+    
+    @Test
+    public void seEliminaCorrectamenteUnCandidatoDeLaListaDeAprobados()
+    {
+    	this.juntaElectoral.eliminarCandidatoAprobado(pepe);
+    	Assert.assertEquals(false, this.juntaElectoral.getCandidatosAprobados().contains(pepe));
+    }
 }
 
 

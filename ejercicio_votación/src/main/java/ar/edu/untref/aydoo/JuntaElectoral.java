@@ -12,6 +12,11 @@ public class JuntaElectoral
 	{
 		this.candidatosAprobados.add(candidato);
 	}
+	
+	public void eliminarCandidatoAprobado(Candidato candidato)
+	{
+		this.candidatosAprobados.remove(candidato);
+	}
 
 	public List<Candidato> getCandidatosAprobados()
 	{
