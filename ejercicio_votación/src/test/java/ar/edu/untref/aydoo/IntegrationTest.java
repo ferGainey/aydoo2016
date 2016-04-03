@@ -25,6 +25,7 @@ public class IntegrationTest
 	private Provincia buenosAires;
 	private Provincia jujuy;
 	private Provincia chubut;
+	private Urna urnaDeMesa1;
 	
 	@Before
 	public void inicializar()
@@ -50,8 +51,8 @@ public class IntegrationTest
 		this.buenosAires = new Provincia("Buenos Aires");
 		this.jujuy = new Provincia("Jujuy");
 		this.chubut = new Provincia("Chubut");
-		this.mesaDeVotacion1 = new MesaDeVotacion(buenosAires);
-		
+		this.urnaDeMesa1 = new Urna();
+		this.mesaDeVotacion1 = new MesaDeVotacion(buenosAires, urnaDeMesa1);
 	}
 	
     @Test
@@ -112,9 +113,15 @@ public class IntegrationTest
     }
     
     @Test
-    public void obtenerProvinciaDeLaMesaDeVOtacion()
+    public void obtenerProvinciaDeLaMesaDeVotacion()
     {
     	Assert.assertEquals(buenosAires, this.mesaDeVotacion1.getProvincia());
+    }
+    
+    @Test
+    public void obtenerUrnaDeLaMesa1()
+    {
+    	Assert.assertEquals(urnaDeMesa1, this.mesaDeVotacion1.getUrna());
     }
 }
 
