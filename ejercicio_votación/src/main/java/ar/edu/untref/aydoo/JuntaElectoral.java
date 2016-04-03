@@ -13,4 +13,8 @@ public class JuntaElectoral
 		this.candidatosAprobados.add(candidato);
 	}
 
+	public List<Candidato> getCandidatosAprobados()
+	{
+		return this.candidatosAprobados;
+	}
 }

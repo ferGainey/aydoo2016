@@ -14,6 +14,7 @@ public class IntegrationTest
 	private Candidato javier;
 	private Candidato matias;
 	private Candidato cosme;
+	private Candidato jorge;
 	private Partido frenteNorte;
 	private Partido frenteSur;
 	private Partido frenteUnido;
@@ -31,6 +32,7 @@ public class IntegrationTest
 		this.javier = new Candidato("Javier", frenteSur);
 		this.matias = new Candidato("Matias",frenteUnido);
 		this.cosme = new Candidato("Cosme", frenteUnido);
+		this.jorge = new Candidato("Jorge", frenteSur);
 		this.juntaElectoral = new JuntaElectoral();
 		this.juntaElectoral.agregarCandidatoAprobado(this.pepe);
 		this.juntaElectoral.agregarCandidatoAprobado(this.jose);
@@ -74,5 +76,16 @@ public class IntegrationTest
     	Assert.assertEquals(true, this.frenteNorte.getCandidatos().contains(fernando));
     	Assert.assertEquals(true, this.frenteNorte.getCandidatos().contains(pepe));
     	Assert.assertEquals(true, this.frenteNorte.getCandidatos().contains(jose));
+    }
+    
+    @Test
+    public void laJuntaElectoralTieneLaListaCorrectaDeLosCandidatosAprobados()
+    {
+    	Assert.assertEquals(true, this.juntaElectoral.getCandidatosAprobados().contains(cosme));
+    	Assert.assertEquals(true, this.juntaElectoral.getCandidatosAprobados().contains(pepe));
+    	Assert.assertEquals(true, this.juntaElectoral.getCandidatosAprobados().contains(jose));
+    	Assert.assertEquals(true, this.juntaElectoral.getCandidatosAprobados().contains(fernando));
+    	Assert.assertEquals(true, this.juntaElectoral.getCandidatosAprobados().contains(javier));
+    	Assert.assertEquals(true, this.juntaElectoral.getCandidatosAprobados().contains(matias));
     }
 }
