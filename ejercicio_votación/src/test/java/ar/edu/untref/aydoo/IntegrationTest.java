@@ -234,6 +234,35 @@ public class IntegrationTest
     	this.mesaDeVotacion2.cerrarMesa();
     	Assert.assertEquals(pepe, this.centroDeComputoNacional.getGanador());
     }
+    
+    @Test
+    public void partidoConMasVotosANivelProvincia()
+    {
+    	this.miBoleta.setCandidato(fernando);
+    	Boleta miBoleta2 = new Boleta(this.juntaElectoral);
+    	miBoleta2.setCandidato(pepe);
+    	Boleta miBoleta3 = new Boleta(this.juntaElectoral);
+    	miBoleta3.setCandidato(matias);
+    	Urna urnaDeMesa4 = new Urna();
+    	MesaDeVotacion mesaDeVotacion4 = new MesaDeVotacion(buenosAires, urnaDeMesa4);
+    	
+    	this.mesaDeVotacion1.emitirVoto(miBoleta3);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	this.mesaDeVotacion2.emitirVoto(miBoleta2);//es de chubut esta mesa
+    	this.mesaDeVotacion1.emitirVoto(miBoleta3);
+        mesaDeVotacion4.emitirVoto(miBoleta);
+        mesaDeVotacion4.emitirVoto(miBoleta);
+        mesaDeVotacion4.emitirVoto(miBoleta3);
+        mesaDeVotacion4.emitirVoto(miBoleta);
+        this.mesaDeVotacion2.emitirVoto(miBoleta3);
+        this.mesaDeVotacion2.emitirVoto(miBoleta3);
+    	
+    	this.mesaDeVotacion1.cerrarMesa();
+    	this.mesaDeVotacion2.cerrarMesa();
+    	mesaDeVotacion4.cerrarMesa();
+    	Assert.assertEquals(frenteNorte, this.centroDeComputoDeBuenosAires.getPartidoGanador());
+    	Assert.assertEquals(frenteUnido, this.centroDeComputoDeChubut.getPartidoGanador());
+    }
 }
 
 

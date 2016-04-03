@@ -47,6 +47,7 @@ public class CentroDeComputoNacional {
 					{
 						Integer cantDeVotos = votacion.get(boletaActual.getCandidato());
 						cantDeVotos++;
+						votacion.put(boletaActual.getCandidato(), cantDeVotos);
 					}
 					else{
 						votacion.put(boletaActual.getCandidato(), 0);
