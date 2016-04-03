@@ -26,6 +26,8 @@ public class IntegrationTest
 	private Provincia jujuy;
 	private Provincia chubut;
 	private Urna urnaDeMesa1;
+	private CentroDeComputoProvincial centroDeComputoDeBuenosAires;
+	private CentroDeComputoProvincial centroDeComputoDeChubut;
 	
 	@Before
 	public void inicializar()
@@ -53,6 +55,10 @@ public class IntegrationTest
 		this.chubut = new Provincia("Chubut");
 		this.urnaDeMesa1 = new Urna();
 		this.mesaDeVotacion1 = new MesaDeVotacion(buenosAires, urnaDeMesa1);
+		this.centroDeComputoDeBuenosAires = new CentroDeComputoProvincial();
+		this.centroDeComputoDeChubut = new CentroDeComputoProvincial();
+		this.buenosAires.setCentroDeComputo(centroDeComputoDeBuenosAires);
+		this.chubut.setCentroDeComputo(centroDeComputoDeChubut);
 	}
 	
     @Test
@@ -143,6 +149,13 @@ public class IntegrationTest
     	this.mesaDeVotacion1.emitirVoto(miBoleta);
     	Assert.assertEquals(true, this.mesaDeVotacion1.getUrna().getVotos().contains(miBoleta));
     	Assert.assertEquals(votoEnBlanco, this.miBoleta.getCandidato());
+    }
+    
+    @Test
+    public void seObtieneElCentroDeComputoDeUnaDeterminadaProvincia()
+    {
+    	Assert.assertEquals(centroDeComputoDeBuenosAires, this.buenosAires.getCentroDeComputoProvincial());
+    	Assert.assertEquals(centroDeComputoDeChubut, this.chubut.getCentroDeComputoProvincial());
     }
 }
 
