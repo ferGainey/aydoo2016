@@ -61,4 +61,10 @@ public class IntegrationTest
     {
     	Assert.assertEquals(frenteNorte, this.pepe.getPartido());
     }
+    
+    @Test
+    public void obtenerNombreDelPartido()
+    {
+    	Assert.assertEquals("Frente Sur", this.frenteSur.getNombre());
+    }
 }

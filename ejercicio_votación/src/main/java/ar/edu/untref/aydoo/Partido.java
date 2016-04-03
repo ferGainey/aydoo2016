@@ -13,4 +13,9 @@ public class Partido {
 	{
 		this.nombre = nombre;
 	}
+
+	public String getNombre() 
+	{
+		return this.nombre;
+	}
 }
