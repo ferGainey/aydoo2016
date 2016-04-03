@@ -7,6 +7,11 @@ public class CentroDeComputoProvincial {
 
 	private List<Urna> urnasDeLaProvincia = new LinkedList<Urna>();
 	
+	public CentroDeComputoProvincial(CentroDeComputoNacional centroDeComputoNacional)
+	{
+		centroDeComputoNacional.agregarCentroDeComputoProvincial(this);
+	}
+	
 	public void agregarUrna(Urna urna)
 	{
 		this.urnasDeLaProvincia.add(urna);

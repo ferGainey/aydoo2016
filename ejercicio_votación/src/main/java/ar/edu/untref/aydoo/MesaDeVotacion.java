@@ -35,4 +35,5 @@ public class MesaDeVotacion {
 	{
 		this.provincia.getCentroDeComputoProvincial().agregarUrna(this.urna);
 	}
+	
 }

@@ -29,6 +29,7 @@ public class IntegrationTest
 	private Urna urnaDeMesa2;
 	private CentroDeComputoProvincial centroDeComputoDeBuenosAires;
 	private CentroDeComputoProvincial centroDeComputoDeChubut;
+	private CentroDeComputoNacional centroDeComputoNacional;
 	
 	@Before
 	public void inicializar()
@@ -43,6 +44,7 @@ public class IntegrationTest
 		this.matias = new Candidato("Matias",frenteUnido);
 		this.cosme = new Candidato("Cosme", frenteUnido);
 		this.jorge = new Candidato("Jorge", frenteSur);
+		this.centroDeComputoNacional = new CentroDeComputoNacional();
 		this.juntaElectoral = new JuntaElectoral();
 		this.juntaElectoral.agregarCandidatoAprobado(this.pepe);
 		this.juntaElectoral.agregarCandidatoAprobado(this.jose);
@@ -56,8 +58,8 @@ public class IntegrationTest
 		this.chubut = new Provincia("Chubut");
 		this.urnaDeMesa1 = new Urna();
 		this.mesaDeVotacion1 = new MesaDeVotacion(buenosAires, urnaDeMesa1);
-		this.centroDeComputoDeBuenosAires = new CentroDeComputoProvincial();
-		this.centroDeComputoDeChubut = new CentroDeComputoProvincial();
+		this.centroDeComputoDeBuenosAires = new CentroDeComputoProvincial(this.centroDeComputoNacional);
+		this.centroDeComputoDeChubut = new CentroDeComputoProvincial(this.centroDeComputoNacional);
 		this.buenosAires.setCentroDeComputo(centroDeComputoDeBuenosAires);
 		this.chubut.setCentroDeComputo(centroDeComputoDeChubut);
 		this.urnaDeMesa2 = new Urna();
@@ -162,7 +164,7 @@ public class IntegrationTest
     }
     
     @Test
-    public void seCierraMesaDeVotacionYElCentroDeComputoRecibeLaUrna()
+    public void seCierraMesaDeVotacionYElCentroDeComputoProvincialRecibeLaUrna()
     {
     	Boleta miBoleta2 = new Boleta(this.juntaElectoral);
     	Boleta miBoleta3 = new Boleta(this.juntaElectoral);
@@ -176,6 +178,23 @@ public class IntegrationTest
     	this.mesaDeVotacion2.cerrarMesa();
     	Assert.assertEquals(true, this.centroDeComputoDeBuenosAires.getUrnasDeLaProvincia().contains(urnaDeMesa1));
     	Assert.assertEquals(true, this.centroDeComputoDeChubut.getUrnasDeLaProvincia().contains(urnaDeMesa2));
+    }
+    
+    @Test
+    public void seCierraMesaDeVotacionYElCentroDeComputoNacionalRecibeLaUrna()
+    {
+    	Boleta miBoleta2 = new Boleta(this.juntaElectoral);
+    	Boleta miBoleta3 = new Boleta(this.juntaElectoral);
+    	this.miBoleta.setCandidato(fernando);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	miBoleta2.setCandidato(fernando);
+    	this.mesaDeVotacion2.emitirVoto(miBoleta);
+    	miBoleta3.setCandidato(pepe);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	this.mesaDeVotacion1.cerrarMesa();
+    	this.mesaDeVotacion2.cerrarMesa();
+    	Assert.assertEquals(true, this.centroDeComputoNacional.getCentrosDeComputoProvinciales().get(0).getUrnasDeLaProvincia().contains(urnaDeMesa1));
+    	Assert.assertEquals(true, this.centroDeComputoNacional.getCentrosDeComputoProvinciales().get(1).getUrnasDeLaProvincia().contains(urnaDeMesa2));
     }
 }
 

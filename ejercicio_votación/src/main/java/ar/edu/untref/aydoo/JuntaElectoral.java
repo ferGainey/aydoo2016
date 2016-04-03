@@ -5,8 +5,7 @@ import java.util.List;
 
 public class JuntaElectoral 
 {
-	private List<Candidato> candidatosAprobados = new LinkedList<Candidato>();
-	
+	private List<Candidato> candidatosAprobados = new LinkedList<Candidato>();	
 	
 	public void agregarCandidatoAprobado(Candidato candidato) 
 	{
