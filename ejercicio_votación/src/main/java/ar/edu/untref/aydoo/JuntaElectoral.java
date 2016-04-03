@@ -6,7 +6,7 @@ import java.util.List;
 public class JuntaElectoral 
 {
 	private List<Candidato> candidatosAprobados = new LinkedList<Candidato>();
-
+	
 	
 	public void agregarCandidatoAprobado(Candidato candidato) 
 	{
@@ -17,7 +17,8 @@ public class JuntaElectoral
 	{
 		this.candidatosAprobados.remove(candidato);
 	}
-
+	
+	//votoEnBlanco si se agrega va a ser un candidato que represente el voto en blanco
 	public List<Candidato> getCandidatosAprobados()
 	{
 		return this.candidatosAprobados;

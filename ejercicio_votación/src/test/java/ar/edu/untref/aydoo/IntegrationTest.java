@@ -131,6 +131,19 @@ public class IntegrationTest
     	this.mesaDeVotacion1.emitirVoto(miBoleta);
     	Assert.assertEquals(true, this.mesaDeVotacion1.getUrna().getVotos().contains(miBoleta));
     }
+    
+    //se siguieron las recomendaciones que estan comentadas sobre los metodos en cuestion
+    @Test
+    public void sePuedeVotarEnBlanco()
+    {
+    	Partido enBlanco = new Partido("Voto en blanco");
+    	Candidato votoEnBlanco = new Candidato("En Blanco", enBlanco);
+    	this.juntaElectoral.agregarCandidatoAprobado(votoEnBlanco);
+    	this.miBoleta.setCandidato(votoEnBlanco);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	Assert.assertEquals(true, this.mesaDeVotacion1.getUrna().getVotos().contains(miBoleta));
+    	Assert.assertEquals(votoEnBlanco, this.miBoleta.getCandidato());
+    }
 }
 
 

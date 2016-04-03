@@ -4,7 +4,8 @@ public class Candidato {
 
 	private String nombre;
 	private Partido miPartido;
-	
+	//para agregar voto en blanco se crea un candidato llamado votoEnBlanco, con un
+	//nombre que sea: "En blanco"
 	public Candidato(String nombre, Partido partido)
 	{
 		this.setNombre(nombre);
