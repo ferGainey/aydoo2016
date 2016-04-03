@@ -196,6 +196,22 @@ public class IntegrationTest
     	Assert.assertEquals(true, this.centroDeComputoNacional.getCentrosDeComputoProvinciales().get(0).getUrnasDeLaProvincia().contains(urnaDeMesa1));
     	Assert.assertEquals(true, this.centroDeComputoNacional.getCentrosDeComputoProvinciales().get(1).getUrnasDeLaProvincia().contains(urnaDeMesa2));
     }
+    
+    @Test
+    public void candidatoConMasVotoANivelNacional()
+    {
+    	Boleta miBoleta2 = new Boleta(this.juntaElectoral);
+    	Boleta miBoleta3 = new Boleta(this.juntaElectoral);
+    	this.miBoleta.setCandidato(fernando);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	miBoleta2.setCandidato(fernando);
+    	this.mesaDeVotacion2.emitirVoto(miBoleta);
+    	miBoleta3.setCandidato(pepe);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	this.mesaDeVotacion1.cerrarMesa();
+    	this.mesaDeVotacion2.cerrarMesa();
+    	Assert.assertEquals(fernando, this.centroDeComputoNacional.getGanador());
+    }
 }
 
 
