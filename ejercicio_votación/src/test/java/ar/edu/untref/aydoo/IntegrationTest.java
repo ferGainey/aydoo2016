@@ -55,4 +55,10 @@ public class IntegrationTest
     {
     	Assert.assertEquals("Pepe", this.pepe.getNombre());
     }
+    
+    @Test
+    public void obtenerPartidoDelCandidato()
+    {
+    	Assert.assertEquals(frenteNorte, this.pepe.getPartido());
+    }
 }

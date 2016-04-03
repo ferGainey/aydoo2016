@@ -24,4 +24,9 @@ public class Candidato {
 	{
 		return this.nombre;
 	}
+	
+	public Partido getPartido()
+	{
+		return this.partido;
+	}
 }
