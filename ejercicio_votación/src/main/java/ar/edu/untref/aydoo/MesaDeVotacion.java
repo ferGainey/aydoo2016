@@ -26,4 +26,9 @@ public class MesaDeVotacion {
 	public void setUrna(Urna urna) {
 		this.urna = urna;
 	}
+
+	public void emitirVoto(Boleta boleta) {
+		this.urna.recibirVoto(boleta);
+		
+	}
 }

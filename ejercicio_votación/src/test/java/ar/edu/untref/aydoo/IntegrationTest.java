@@ -123,6 +123,14 @@ public class IntegrationTest
     {
     	Assert.assertEquals(urnaDeMesa1, this.mesaDeVotacion1.getUrna());
     }
+    
+    @Test
+    public void emitirVoto()
+    {
+    	this.miBoleta.setCandidato(fernando);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	Assert.assertEquals(true, this.mesaDeVotacion1.getUrna().getVotos().contains(miBoleta));
+    }
 }
 
 
