@@ -188,9 +188,9 @@ public class IntegrationTest
     	this.miBoleta.setCandidato(fernando);
     	this.mesaDeVotacion1.emitirVoto(miBoleta);
     	miBoleta2.setCandidato(fernando);
-    	this.mesaDeVotacion2.emitirVoto(miBoleta);
+    	this.mesaDeVotacion2.emitirVoto(miBoleta2);
     	miBoleta3.setCandidato(pepe);
-    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta3);
     	this.mesaDeVotacion1.cerrarMesa();
     	this.mesaDeVotacion2.cerrarMesa();
     	Assert.assertEquals(true, this.centroDeComputoNacional.getCentrosDeComputoProvinciales().get(0).getUrnasDeLaProvincia().contains(urnaDeMesa1));
@@ -205,12 +205,34 @@ public class IntegrationTest
     	this.miBoleta.setCandidato(fernando);
     	this.mesaDeVotacion1.emitirVoto(miBoleta);
     	miBoleta2.setCandidato(fernando);
-    	this.mesaDeVotacion2.emitirVoto(miBoleta);
+    	this.mesaDeVotacion2.emitirVoto(miBoleta2);
     	miBoleta3.setCandidato(pepe);
-    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta3);
     	this.mesaDeVotacion1.cerrarMesa();
     	this.mesaDeVotacion2.cerrarMesa();
     	Assert.assertEquals(fernando, this.centroDeComputoNacional.getGanador());
+    }
+    
+    @Test
+    public void candidatoConMasVotoANivelNacional2()
+    {
+    	Boleta miBoleta2 = new Boleta(this.juntaElectoral);
+    	Boleta miBoleta3 = new Boleta(this.juntaElectoral);
+    	Boleta miBoleta4 = new Boleta(this.juntaElectoral);
+    	Boleta miBoleta5 = new Boleta(this.juntaElectoral);
+    	miBoleta4.setCandidato(pepe);
+    	miBoleta5.setCandidato(pepe);
+    	this.miBoleta.setCandidato(fernando);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta4);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta5);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	miBoleta2.setCandidato(fernando);
+    	this.mesaDeVotacion2.emitirVoto(miBoleta2);
+    	miBoleta3.setCandidato(pepe);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta3);
+    	this.mesaDeVotacion1.cerrarMesa();
+    	this.mesaDeVotacion2.cerrarMesa();
+    	Assert.assertEquals(pepe, this.centroDeComputoNacional.getGanador());
     }
 }
 
