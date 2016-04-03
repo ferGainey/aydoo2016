@@ -3,7 +3,7 @@ package ar.edu.untref.aydoo;
 public class Candidato {
 
 	private String nombre;
-	private Partido partido;
+	private Partido miPartido;
 	
 	public Candidato(String nombre, Partido partido)
 	{
@@ -12,7 +12,8 @@ public class Candidato {
 	}
 
 	private void setPartido(Partido partido) {
-		this.partido = partido;
+		this.miPartido = partido;
+		partido.agregarCandidato(this);
 		
 	}
 
@@ -27,6 +28,6 @@ public class Candidato {
 	
 	public Partido getPartido()
 	{
-		return this.partido;
+		return this.miPartido;
 	}
 }

@@ -67,4 +67,12 @@ public class IntegrationTest
     {
     	Assert.assertEquals("Frente Sur", this.frenteSur.getNombre());
     }
+    
+    @Test
+    public void elPartidoTieneALosCandidatosQueSePusieronQuePertenecenAEl()
+    {
+    	Assert.assertEquals(true, this.frenteNorte.getCandidatos().contains(fernando));
+    	Assert.assertEquals(true, this.frenteNorte.getCandidatos().contains(pepe));
+    	Assert.assertEquals(true, this.frenteNorte.getCandidatos().contains(jose));
+    }
 }
