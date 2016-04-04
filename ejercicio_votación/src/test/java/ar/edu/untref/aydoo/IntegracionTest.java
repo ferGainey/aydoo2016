@@ -8,7 +8,7 @@ import org.junit.Assert;
 import org.junit.Before;
 
 
-public class IntegrationTest 
+public class IntegracionTest 
 {
 	private Boleta miBoleta;
 	private Candidato pepe;
@@ -216,6 +216,8 @@ public class IntegrationTest
     	Assert.assertEquals(fernando, this.centroDeComputoNacional.getGanador());
     }
     
+    //se cambiaron los votos, emiti los votos en distinto orden, los votos fueron emitidos
+    //en otro orden, y el ganador fue otro
     @Test
     public void candidatoConMasVotoANivelNacional2()
     {
