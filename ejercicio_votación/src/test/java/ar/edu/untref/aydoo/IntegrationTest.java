@@ -1,6 +1,9 @@
 package ar.edu.untref.aydoo;
 
 import org.junit.Test;
+
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Before;
 
@@ -262,6 +265,20 @@ public class IntegrationTest
     	mesaDeVotacion4.cerrarMesa();
     	Assert.assertEquals(frenteNorte, this.centroDeComputoDeBuenosAires.getPartidoGanador());
     	Assert.assertEquals(frenteUnido, this.centroDeComputoDeChubut.getPartidoGanador());
+    }
+    
+    @Test
+    public void alEmitirVariosVotosAlMismoCandidatoEnLaUrnaEstanLasNBoletas()
+    {
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	this.mesaDeVotacion1.emitirVoto(miBoleta);
+    	List<Boleta> boletas = this.mesaDeVotacion1.getUrna().getVotos();
+    	for(int i=0; i<boletas.size(); i++)
+    	{
+    		Assert.assertEquals(miBoleta, boletas.get(i));
+    	}
     }
 }
 
