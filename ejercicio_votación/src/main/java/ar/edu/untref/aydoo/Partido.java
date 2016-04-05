@@ -34,4 +34,17 @@ public class Partido {
 	{
 		this.candidatos.add(candidato);
 	}
+	
+	public void eliminarCandidato(Candidato candidato)
+	{
+		for(int i=0; i<this.candidatos.size(); i++)
+		{
+			if(candidato==this.candidatos.get(i))
+			{
+				this.candidatos.remove(i);
+				return;
+			}
+		}
+		
+	}
 }

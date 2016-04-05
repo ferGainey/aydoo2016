@@ -24,9 +24,7 @@ public class IntegracionTest
 	private JuntaElectoral juntaElectoral;
 	private MesaDeVotacion mesaDeVotacion1;
 	private MesaDeVotacion mesaDeVotacion2;
-	private MesaDeVotacion mesaDeVotacion3;
 	private Provincia buenosAires;
-	private Provincia jujuy;
 	private Provincia chubut;
 	private Urna urnaDeMesa1;
 	private Urna urnaDeMesa2;
@@ -57,7 +55,6 @@ public class IntegracionTest
 		this.juntaElectoral.agregarCandidatoAprobado(this.cosme);
 		this.miBoleta = new Boleta(this.juntaElectoral);
 		this.buenosAires = new Provincia("Buenos Aires");
-		this.jujuy = new Provincia("Jujuy");
 		this.chubut = new Provincia("Chubut");
 		this.urnaDeMesa1 = new Urna();
 		this.mesaDeVotacion1 = new MesaDeVotacion(buenosAires, urnaDeMesa1);
@@ -282,6 +279,15 @@ public class IntegracionTest
     		Assert.assertEquals(miBoleta, boletas.get(i));
     	}
     }
+    
+    @Test
+    public void siElCandidatoCambiaDePartidoSeraBorradoDelAnterior()
+    {
+    	Assert.assertEquals(this.frenteNorte, this.jose.getPartido());
+    	Assert.assertEquals(true, this.frenteNorte.getCandidatos().contains(this.jose));
+    	this.jose.setPartido(this.frenteUnido);
+    	Assert.assertEquals(false, this.frenteNorte.getCandidatos().contains(this.jose));
+    	    }
 }
 
 

@@ -12,9 +12,18 @@ public class Candidato {
 		this.setPartido(partido);
 	}
 
-	private void setPartido(Partido partido) {
-		this.miPartido = partido;
-		partido.agregarCandidato(this);
+	public void setPartido(Partido partido) {
+		if(this.miPartido==null)
+		{
+			this.miPartido = partido;
+			partido.agregarCandidato(this);
+		} 
+		else{
+			this.miPartido.eliminarCandidato(this);
+			this.miPartido = partido;
+			partido.agregarCandidato(this);
+		}
+		
 		
 	}
 

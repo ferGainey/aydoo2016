@@ -60,5 +60,5 @@ public class CentroDeComputoProvincial {
 		}
 	return ganador;
 	}
-			
+		
 }
