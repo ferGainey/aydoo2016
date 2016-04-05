@@ -287,7 +287,16 @@ public class IntegracionTest
     	Assert.assertEquals(true, this.frenteNorte.getCandidatos().contains(this.jose));
     	this.jose.setPartido(this.frenteUnido);
     	Assert.assertEquals(false, this.frenteNorte.getCandidatos().contains(this.jose));
-    	    }
+    }
+    
+    @Test
+    public void siElCandidatoCambiaDePartidoEsAgregadoEnElNuevoPartido()
+    {
+    	Assert.assertEquals(false, this.frenteUnido.getCandidatos().contains(this.jose));
+    	this.jose.setPartido(this.frenteUnido);
+    	Assert.assertEquals(this.frenteUnido, this.jose.getPartido());
+    	Assert.assertEquals(true, this.frenteUnido.getCandidatos().contains(this.jose));
+    }
 }
 
 
