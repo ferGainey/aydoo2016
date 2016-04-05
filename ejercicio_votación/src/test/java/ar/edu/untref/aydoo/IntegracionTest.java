@@ -210,7 +210,7 @@ public class IntegracionTest
     	this.mesaDeVotacion1.emitirVoto(miBoleta3);
     	this.mesaDeVotacion1.cerrarMesa();
     	this.mesaDeVotacion2.cerrarMesa();
-    	Assert.assertEquals(fernando, this.centroDeComputoNacional.getGanador());
+    	Assert.assertEquals(fernando, this.centroDeComputoNacional.getCandidatoGanador());
     }
     
     //se cambiaron los votos, emiti los votos en distinto orden, los votos fueron emitidos
@@ -234,7 +234,7 @@ public class IntegracionTest
     	this.mesaDeVotacion1.emitirVoto(miBoleta3);
     	this.mesaDeVotacion1.cerrarMesa();
     	this.mesaDeVotacion2.cerrarMesa();
-    	Assert.assertEquals(pepe, this.centroDeComputoNacional.getGanador());
+    	Assert.assertEquals(pepe, this.centroDeComputoNacional.getCandidatoGanador());
     }
     
     @Test

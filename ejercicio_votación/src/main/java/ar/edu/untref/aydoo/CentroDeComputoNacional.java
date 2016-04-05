@@ -30,7 +30,7 @@ public class CentroDeComputoNacional {
 		return this.centrosDeComputoProvinciales;
 	}
 	
-	public Candidato getGanador()
+	public Candidato getCandidatoGanador()
 	{
 		HashMap<Candidato, Integer> votacion = new HashMap<Candidato, Integer>();
 		Iterator<CentroDeComputoProvincial> iterator = this.getCentrosDeComputoProvinciales().iterator();
