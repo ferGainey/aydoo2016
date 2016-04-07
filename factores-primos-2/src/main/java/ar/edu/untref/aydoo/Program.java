@@ -25,7 +25,9 @@ public class Program
 		this.escribir(tipoDeFormato);
 	}
 
-	private boolean esPrimo(int numero){
+	//se aplican una serie de algoritmos para reducir comparaciones
+	//deberia ser privado, pero sino no puedo correr los tests
+	boolean esPrimo(int numero){
 		if(numero == 1 || numero == 2|| numero==3){
 			return true;
 		} else{
@@ -45,7 +47,8 @@ public class Program
 		}
 	}
 
-	private void resolver(int numero){
+	//deberia ser privado, pero sino no puedo probarlo
+	void resolver(int numero){
 
 		int numeroActual = numero;
 		int divisorCandidato = 2;
@@ -105,7 +108,8 @@ public class Program
 		}
 	}
 
-	private void leer(){
+	//deberia ser privado, pero sino no puedo testearlo
+	void leer(){
 		String[] palabraRecibida = this.separarPalabra(this.getFormato());
 		if((palabraRecibida.length)!=2){
 			this.tipoDeFormato=1;
@@ -124,14 +128,16 @@ public class Program
 		if(!(formatoActual.equals("pretty")) && !(formatoActual.equals("quiet"))){this.tipoDeFormato=3;}
 	}
 
-	private String[] separarPalabra(String palabra) {
+	//deberia ser privado, pero sino no puedo testearlo
+	String[] separarPalabra(String palabra) {
 		String palabraRecibida = palabra;
 		String delimitador= "=";
 		String[] palabrasSeparadas = palabraRecibida.split(delimitador);
 		return palabrasSeparadas;
 	}
 
-	private ArrayList<Integer> invertirLista(ArrayList<Integer> lista){
+	//deberia ser privado, pero sino no puedo testearlo
+	ArrayList<Integer> invertirLista(ArrayList<Integer> lista){
 		Iterator<Integer> iterador = lista.iterator();
 		int tamanioLista = lista.size();
 		Integer[] listaInvertida = new Integer[tamanioLista];
@@ -142,15 +148,18 @@ public class Program
 		return listaADevolver;
 	}
 
-	private int getTipoDeFormato(){
+	//deberia ser privado, pero sino no puedo testearlo
+	int getTipoDeFormato(){
 		return this.tipoDeFormato;
 	}
 
-	private void setFormato(String formato){
+	//deberia ser privado, pero sino no puedo testearlo
+	void setFormato(String formato){
 		this.formato=formato;
 	}
 
-	private String getFormato(){
+	//deberia ser privado, pero sino no puedo testearlo
+	String getFormato(){
 		return this.formato;
 	}
 }
