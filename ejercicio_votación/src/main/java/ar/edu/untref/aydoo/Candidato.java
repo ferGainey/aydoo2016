@@ -23,8 +23,8 @@ public class Candidato {
 			this.miPartido = partido;
 			partido.agregarCandidato(this);
 		}
-		
-		
+
+
 	}
 
 	private void setNombre(String nombre) {
@@ -35,7 +35,7 @@ public class Candidato {
 	{
 		return this.nombre;
 	}
-	
+
 	public Partido getPartido()
 	{
 		return this.miPartido;

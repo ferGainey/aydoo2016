@@ -6,7 +6,7 @@ public class Boleta
 
 	private JuntaElectoral juntaElectoral;
 	private Candidato miCandidato;
-	
+
 	public Boleta(JuntaElectoral juntaElectoralActual)
 	{
 		this.juntaElectoral = juntaElectoralActual;
@@ -28,5 +28,5 @@ public class Boleta
 	{
 		return this.miCandidato;
 	}
-	
+
 }
