@@ -29,12 +29,12 @@ public class Partido {
 	{
 		return this.candidatos;
 	}
-	
+
 	public void agregarCandidato(Candidato candidato)
 	{
 		this.candidatos.add(candidato);
 	}
-	
+
 	public void eliminarCandidato(Candidato candidato)
 	{
 		for(int i=0; i<this.candidatos.size(); i++)
@@ -45,6 +45,6 @@ public class Partido {
 				return;
 			}
 		}
-		
+
 	}
 }

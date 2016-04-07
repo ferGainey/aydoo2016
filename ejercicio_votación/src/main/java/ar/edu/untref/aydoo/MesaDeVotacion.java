@@ -4,7 +4,7 @@ public class MesaDeVotacion {
 
 	private Provincia provincia;
 	private Urna urna;
-	
+
 	public MesaDeVotacion(Provincia provincia, Urna urna)
 	{
 		this.setProvincia(provincia);
@@ -30,10 +30,10 @@ public class MesaDeVotacion {
 	public void emitirVoto(Boleta boleta) {
 		this.urna.recibirVoto(boleta);
 	}
-	
+
 	public void cerrarMesa()
 	{
 		this.provincia.getCentroDeComputoProvincial().agregarUrna(this.urna);
 	}
-	
+
 }

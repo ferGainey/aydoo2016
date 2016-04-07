@@ -9,27 +9,27 @@ public class CentroDeComputoNacional {
 
 	private List<Urna> urnasDeLaNacion = new LinkedList<Urna>();
 	private List<CentroDeComputoProvincial> centrosDeComputoProvinciales = new LinkedList<CentroDeComputoProvincial>();
-	
+
 	public void agregarUrna(Urna urna)
 	{
 		this.urnasDeLaNacion.add(urna);
 	}
-	
+
 	public List<Urna> getUrnasDeLaNacion()
 	{
 		return this.urnasDeLaNacion;
 	}
-	
+
 	public void agregarCentroDeComputoProvincial(CentroDeComputoProvincial centroDeComputoProvinvial)
 	{
 		this.centrosDeComputoProvinciales.add(centroDeComputoProvinvial);
 	}
-	
+
 	public List<CentroDeComputoProvincial> getCentrosDeComputoProvinciales()
 	{
 		return this.centrosDeComputoProvinciales;
 	}
-	
+
 	public Candidato getCandidatoGanador()
 	{
 		HashMap<Candidato, Integer> votacion = new HashMap<Candidato, Integer>();
@@ -57,16 +57,16 @@ public class CentroDeComputoNacional {
 		}
 		Candidato ganador = null;
 		for (Candidato key : votacion.keySet()) {
-		    if(ganador==null)
-		    	{
-		    		ganador=key;
-		    	} else{
-		    		if(votacion.get(key)>votacion.get(ganador))
-		    		{
-		    			ganador=key;
-		    		}
-		    	}
+			if(ganador==null)
+			{
+				ganador=key;
+			} else{
+				if(votacion.get(key)>votacion.get(ganador))
+				{
+					ganador=key;
+				}
 			}
+		}
 		return ganador;
 	}
 }

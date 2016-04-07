@@ -8,22 +8,22 @@ import java.util.List;
 public class CentroDeComputoProvincial {
 
 	private List<Urna> urnasDeLaProvincia = new LinkedList<Urna>();
-	
+
 	public CentroDeComputoProvincial(CentroDeComputoNacional centroDeComputoNacional)
 	{
 		centroDeComputoNacional.agregarCentroDeComputoProvincial(this);
 	}
-	
+
 	public void agregarUrna(Urna urna)
 	{
 		this.urnasDeLaProvincia.add(urna);
 	}
-	
+
 	public List<Urna> getUrnasDeLaProvincia()
 	{
 		return this.urnasDeLaProvincia;
 	}
-	
+
 	public Partido getPartidoGanador()
 	{
 		HashMap<Partido, Integer> votacion = new HashMap<Partido, Integer>();
@@ -45,20 +45,20 @@ public class CentroDeComputoProvincial {
 				}
 			}
 		}
-	
+
 		Partido ganador = null;
 		for (Partido key : votacion.keySet()) {
 			if(ganador==null)
-	    	{
-	    		ganador=key;
-	    	} else{
-	    		if(votacion.get(key)>votacion.get(ganador))
-	    		{
-	    			ganador=key;
-	    		}
-	    	}
+			{
+				ganador=key;
+			} else{
+				if(votacion.get(key)>votacion.get(ganador))
+				{
+					ganador=key;
+				}
+			}
 		}
-	return ganador;
+		return ganador;
 	}
-		
+
 }
