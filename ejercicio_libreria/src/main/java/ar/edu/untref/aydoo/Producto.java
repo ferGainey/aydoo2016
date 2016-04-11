@@ -3,7 +3,7 @@ package ar.edu.untref.aydoo;
 public abstract class Producto {
 
 	private String nombre;
-	private float precio;
+	private double precio;
 
 	public Producto(String nombre){
 		this.setNombre(nombre);
@@ -17,11 +17,11 @@ public abstract class Producto {
 		return this.nombre;
 	}
 	
-	public void setPrecio(float precio){
+	public void setPrecio(double precio){
 		this.precio = precio;
 	}
 	
-	public float getPrecio(){
+	public double getPrecio(){
 		return this.precio;
 	}
 }

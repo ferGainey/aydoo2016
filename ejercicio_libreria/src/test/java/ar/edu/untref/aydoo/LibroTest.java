@@ -12,4 +12,11 @@ public class LibroTest {
 		Libro miLibro = new Libro("El arte de la guerra");
 		Assert.assertEquals("El arte de la guerra", miLibro.getNombre());
 	}
+	
+	@Test
+	public void ponerPrecioAlLibro(){
+		Libro miLibro = new Libro("El arte de la guerra");
+		miLibro.setPrecio(25.55);
+		Assert.assertEquals(25.55, miLibro.getPrecio());
+	}
 }
