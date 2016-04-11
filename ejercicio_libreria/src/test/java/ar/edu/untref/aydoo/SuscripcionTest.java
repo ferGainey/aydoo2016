@@ -20,4 +20,11 @@ public class SuscripcionTest {
 	public void ponerRevistaDeLaSuscripcion(){
 		Assert.assertEquals(this.elGrafico, this.suscripcionAElGrafico.getProducto());
 	}
+	
+	@Test
+	public void ponerLaSuscripcionParaQueSeaAnual(){
+		this.suscripcionAElGrafico.setEsAnual(true);
+		Assert.assertEquals(true, this.suscripcionAElGrafico.getEsAnual());
+		Assert.assertEquals(null, this.suscripcionAElGrafico.getMes());
+	}
 }
