@@ -13,4 +13,11 @@ public class ArticuloDeLibreriaTest {
 		ArticuloDeLibreria miArticuloDeLibreria = new ArticuloDeLibreria("Plasticola");
 		Assert.assertEquals("Plasticola", miArticuloDeLibreria.getNombre());
 	}
+	
+	@Test
+	public void ponerPrecioAlArticuloDeLibreria(){
+		ArticuloDeLibreria miArticuloDeLibreria = new ArticuloDeLibreria("Plasticola");
+		miArticuloDeLibreria.setPrecio(12.00);
+		Assert.assertEquals(12.00, miArticuloDeLibreria.getPrecio());
+	}
 }
