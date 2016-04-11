@@ -9,14 +9,19 @@ import junit.framework.Assert;
 public class ClienteTest {
 
 	Cliente miCliente;
-	
+
 	@Before
 	public void inicializar(){
 		this.miCliente = new Cliente("Pablo", "Calle Falsa 123, Springfield");
 	}
-	
+
 	@Test
 	public void unClienteSeCreaConUnNombre(){
 		Assert.assertEquals("Pablo", this.miCliente.getNombre());
+	}
+
+	@Test
+	public void unClienteSeCreaConUnaDireccion(){
+		Assert.assertEquals("Calle Falsa 123, Springfield", this.miCliente.getDireccion());
 	}
 }
