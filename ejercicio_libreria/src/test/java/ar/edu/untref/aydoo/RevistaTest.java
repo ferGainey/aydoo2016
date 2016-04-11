@@ -9,23 +9,23 @@ import junit.framework.Assert;
 public class RevistaTest {
 
 	private Revista miRevista;
-	
+
 	@Before
 	public void inicializar(){
 		this.miRevista = new Revista("Viajes");
 		this.miRevista.setPrecio(15.99);
 	}
-	
+
 	@Test
 	public void ponerNombreaALaRevista(){
 		Assert.assertEquals("Viajes", this.miRevista.getNombre());
 	}
-	
+
 	@Test
 	public void ponerPrecioALaRevista(){
 		Assert.assertEquals(15.99, this.miRevista.getPrecio());
 	}
-	
+
 	@Test
 	public void ponerPeriodicidadALaRevista(){
 		this.miRevista.setPeriodicidad(5);

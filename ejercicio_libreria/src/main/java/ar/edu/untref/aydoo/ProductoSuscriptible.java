@@ -3,11 +3,11 @@ package ar.edu.untref.aydoo;
 public abstract class ProductoSuscriptible extends Producto {
 
 	private int periodicidad;
-	
+
 	public ProductoSuscriptible(String nombre) {
 		super(nombre);
 	}
-	
+
 	/*
 	 * @post: se le indica la periodicidad que la revista tiene por mes. El numero indica
 	 * la cantidad de veces que sale la revista en un mes.
