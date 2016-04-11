@@ -19,8 +19,11 @@ public class Suscripcion {
 
 	public void setEsAnual(boolean esAnual) {
 		this.esAnual = esAnual;
+		if(this.esAnual == true){
+			this.mes = null;
+		}
 	}
-	
+
 	public boolean getEsAnual(){
 		return this.esAnual;
 	}
@@ -28,8 +31,9 @@ public class Suscripcion {
 	public Mes getMes() {
 		return this.mes;
 	}
-	
+
 	public void setMes(Mes mes){
 		this.mes = mes;
+		this.esAnual = false;
 	}
 }

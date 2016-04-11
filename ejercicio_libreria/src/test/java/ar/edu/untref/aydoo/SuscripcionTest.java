@@ -27,4 +27,12 @@ public class SuscripcionTest {
 		Assert.assertEquals(true, this.suscripcionAElGrafico.getEsAnual());
 		Assert.assertEquals(null, this.suscripcionAElGrafico.getMes());
 	}
+	
+	@Test
+	public void ponerLaSuscripcionParaUnDeterminadoTest(){
+		Mes marzo = new Mes("Marzo");
+		this.suscripcionAElGrafico.setMes(marzo);
+		Assert.assertEquals(false, this.suscripcionAElGrafico.getEsAnual());
+		Assert.assertEquals(marzo, this.suscripcionAElGrafico.getMes());
+	}
 }
