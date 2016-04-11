@@ -20,12 +20,18 @@ public class PeriodicoTest {
 	public void ponerNombreaALPeriodico(){
 		Assert.assertEquals("La Nacion", this.miPeriodico.getNombre());
 	}
-	
+
 	@Test
 	public void ponerPrecioALPeriodico(){
 		Assert.assertEquals(9.80, this.miPeriodico.getPrecio());
 	}
-	
+
+	@Test
+	public void ponerPeriodicidadALaRevista(){
+		this.miPeriodico.setPeriodicidad(1);
+		Assert.assertEquals(1, this.miPeriodico.getPeriodicidad());
+	}
+
 }
 
 
