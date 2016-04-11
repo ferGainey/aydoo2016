@@ -45,9 +45,12 @@ public class ClienteTest {
 	}
 	
 	@Test
-	public void unClientePuedeComprarUnProducto(){
+	public void unClientePuedeEfectuarUnaCompra(){
 		Producto lapiz = new ArticuloDeLibreria("Lapiz");
 		lapiz.setPrecio(5.75);
-		this.miCliente.comprar(lapiz);
+		Mes agosto = new Mes("Agosto");
+		Compra miCompra = new Compra(agosto, lapiz);
+		this.miCliente.efectuarCompra(miCompra);
+		Assert.assertEquals(true, this.miCliente.getRegistroDeCompras().contains(miCompra));
 	}
 }

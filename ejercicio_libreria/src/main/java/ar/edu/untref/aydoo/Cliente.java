@@ -8,7 +8,8 @@ public class Cliente {
 	private String nombre;
 	private String direccion;
 	List<Suscripcion> suscripciones = new LinkedList<Suscripcion>();
-	
+	List<Compra> registroDeCompras = new LinkedList<Compra>();
+
 	public Cliente(String nombre, String direccion) {
 		this.nombre = nombre;
 		this.direccion = direccion;
@@ -40,8 +41,12 @@ public class Cliente {
 		this.suscripciones.add(suscripcion);
 	}
 
-	public void comprar(Producto producto) {
-		
+	public void efectuarCompra(Compra compra) {
+		this.registroDeCompras.add(compra);
+	}
+
+	public List<Compra> getRegistroDeCompras(){
+		return this.registroDeCompras;
 	}
 
 }
