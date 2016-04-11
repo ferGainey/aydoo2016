@@ -10,11 +10,14 @@ public class CompraTest {
 
 	private Compra miCompra;
 	private Mes abril;
+	private Producto cuaderno;
 	
 	@Before
 	public void inicializar(){
 		this.abril = new Mes("Abril");
-		this.miCompra = new Compra(abril, 205);
+		this.cuaderno = new ArticuloDeLibreria("Cuaderno");
+		this.cuaderno.setPrecio(17.50);
+		this.miCompra = new Compra(abril, this.cuaderno);
 	}
 	
 	@Test
@@ -24,6 +27,11 @@ public class CompraTest {
 	
 	@Test
 	public void obtenerMontoDeLaCompra(){
-		Assert.assertEquals(205.0, this.miCompra.getMonto());
+		Assert.assertEquals(17.50, this.miCompra.getMonto());
+	}
+	
+	@Test
+	public void obtenerProductoDeLaCompra(){
+		Assert.assertEquals(this.cuaderno, this.miCompra.getProducto());
 	}
 }

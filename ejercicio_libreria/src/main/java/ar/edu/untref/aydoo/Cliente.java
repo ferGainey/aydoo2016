@@ -40,4 +40,8 @@ public class Cliente {
 		this.suscripciones.add(suscripcion);
 	}
 
+	public void comprar(Producto producto) {
+		
+	}
+
 }

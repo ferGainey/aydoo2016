@@ -3,23 +3,26 @@ package ar.edu.untref.aydoo;
 public class Compra {
 
 	private Mes mes;
-	private double monto;
+	private Producto producto;
 	
-	public Compra(Mes mes, double monto){
+	public Compra(Mes mes, Producto producto){
 		this.setMes(mes);
-		this.setMonto(monto);
+		this.producto = producto;
 	}
 	
 	public Mes getMes() {
 		return mes;
 	}
+	
 	private void setMes(Mes mes) {
 		this.mes = mes;
 	}
+	
 	public double getMonto() {
-		return monto;
+		return this.producto.getPrecio();
 	}
-	public void setMonto(double monto) {
-		this.monto = monto;
+	
+	public Producto getProducto(){
+		return this.producto;
 	}
 }

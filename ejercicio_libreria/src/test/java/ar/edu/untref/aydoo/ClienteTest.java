@@ -43,4 +43,11 @@ public class ClienteTest {
 		Assert.assertEquals(true, this.miCliente.suscripciones.contains(this.suscripcionARevistaViva));
 		Assert.assertEquals(true, this.suscripcionARevistaViva.getEsAnual());
 	}
+	
+	@Test
+	public void unClientePuedeComprarUnProducto(){
+		Producto lapiz = new ArticuloDeLibreria("Lapiz");
+		lapiz.setPrecio(5.75);
+		this.miCliente.comprar(lapiz);
+	}
 }
