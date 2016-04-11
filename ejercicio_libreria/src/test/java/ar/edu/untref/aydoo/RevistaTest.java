@@ -25,4 +25,10 @@ public class RevistaTest {
 	public void ponerPrecioALaRevista(){
 		Assert.assertEquals(15.99, this.miRevista.getPrecio());
 	}
+	
+	@Test
+	public void ponerPeriodicidadALaRevista(){
+		this.miRevista.setPeriodicidad(5);
+		Assert.assertEquals(5, this.miRevista.getPeriodicidad());
+	}
 }
