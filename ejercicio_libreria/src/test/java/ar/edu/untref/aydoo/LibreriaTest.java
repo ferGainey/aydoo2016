@@ -38,4 +38,8 @@ public class LibreriaTest {
 		Assert.assertEquals(false, this.miLibreria.getRegistroDeClientes().contains(mariano));
 	}
 	
+	@Test
+	public void laLibreriaCalculaElMontoACobrarParaUnClienteEnUnDeterminadoMes(){
+		
+	}
 }

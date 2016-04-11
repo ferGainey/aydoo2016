@@ -25,4 +25,12 @@ public class ArticuloDeLibreriaTest {
 		ArticuloDeLibreria miArticuloDeLibreria = new ArticuloDeLibreria("Plasticola");
 		miArticuloDeLibreria.setPrecio(-10.00);
 	}
+	
+	@Test
+	public void seCalculaElPrecioConIvaDelProducto(){
+		ArticuloDeLibreria miArticuloDeLibreria = new ArticuloDeLibreria("Plasticola");
+		miArticuloDeLibreria.setPrecio(5.00);
+		double valorEsperado = 5.0 + (5.0 * 0.21);
+		Assert.assertEquals(valorEsperado, miArticuloDeLibreria.getPrecioConIva());
+	}
 }
