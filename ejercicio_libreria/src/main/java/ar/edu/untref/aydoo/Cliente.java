@@ -1,9 +1,13 @@
 package ar.edu.untref.aydoo;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Cliente {
 
 	private String nombre;
 	private String direccion;
+	List<Suscripcion> suscripciones = new LinkedList<Suscripcion>();
 	
 	public Cliente(String nombre, String direccion) {
 		this.nombre = nombre;
@@ -24,6 +28,11 @@ public class Cliente {
 
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+
+	public void suscribirseEnUnMes(Mes mes, Suscripcion suscripcion) {
+		suscripcion.setMes(mes);
+		this.suscripciones.add(suscripcion);
 	}
 
 }
