@@ -21,4 +21,9 @@ public class CompraTest {
 	public void obtenerMesDeLaCompra(){
 		Assert.assertEquals(abril, this.miCompra.getMes());
 	}
+	
+	@Test
+	public void obtenerMontoDeLaCompra(){
+		Assert.assertEquals(205.0, this.miCompra.getMonto());
+	}
 }
