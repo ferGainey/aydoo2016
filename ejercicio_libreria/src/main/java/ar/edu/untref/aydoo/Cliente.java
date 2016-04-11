@@ -35,4 +35,9 @@ public class Cliente {
 		this.suscripciones.add(suscripcion);
 	}
 
+	public void suscribirseAnualmente(Suscripcion suscripcion) {
+		suscripcion.setEsAnual(true);
+		this.suscripciones.add(suscripcion);
+	}
+
 }

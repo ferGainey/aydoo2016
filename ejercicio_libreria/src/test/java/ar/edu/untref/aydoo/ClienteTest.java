@@ -34,5 +34,13 @@ public class ClienteTest {
 		Mes octubre = new Mes("Octubre");
 		this.miCliente.suscribirseEnUnMes(octubre, this.suscripcionARevistaViva);
 		Assert.assertEquals(true, this.miCliente.suscripciones.contains(this.suscripcionARevistaViva));
+		Assert.assertEquals(octubre, this.suscripcionARevistaViva.getMes());
+	}
+	
+	@Test
+	public void unClienteSeHaceUnaSuscripcionAnual(){
+		this.miCliente.suscribirseAnualmente(this.suscripcionARevistaViva);
+		Assert.assertEquals(true, this.miCliente.suscripciones.contains(this.suscripcionARevistaViva));
+		Assert.assertEquals(true, this.suscripcionARevistaViva.getEsAnual());
 	}
 }
