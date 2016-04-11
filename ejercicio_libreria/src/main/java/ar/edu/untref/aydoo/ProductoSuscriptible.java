@@ -13,7 +13,12 @@ public abstract class ProductoSuscriptible extends Producto {
 	 * la cantidad de veces que sale la revista en un mes.
 	 */
 	public void setPeriodicidad(int periodicidad) {
-		this.periodicidad = periodicidad;
+		if(periodicidad<=30 && periodicidad>=0){
+			this.periodicidad = periodicidad;
+		}
+		else{
+			throw new IllegalArgumentException("La periodicidad no puede ser menor a 0 o mayor a 30");
+		}
 	}
 
 	/*

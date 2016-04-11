@@ -26,8 +26,13 @@ public class PeriodicoTest {
 		Assert.assertEquals(9.80, this.miPeriodico.getPrecio());
 	}
 
+	@Test(expected = Exception.class)
+	public void ponerPrecioNegativoAlPeriodico(){
+		this.miPeriodico.setPrecio(-5.0);
+	}
+	
 	@Test
-	public void ponerPeriodicidadALaRevista(){
+	public void ponerPeriodicidadAlPeriodico(){
 		this.miPeriodico.setPeriodicidad(30);
 		Assert.assertEquals(30, this.miPeriodico.getPeriodicidad());
 	}
@@ -35,6 +40,16 @@ public class PeriodicoTest {
 	@Test(expected = Exception.class)  
 	public void ponerPrecioNegativoAlPeriodicoLanzaException(){
 		this.miPeriodico.setPrecio(-1.5);
+	}
+	
+	@Test(expected = Exception.class)
+	public void ponerPeriodicidadNegativaAlPeriodico(){
+		this.miPeriodico.setPeriodicidad(-5);
+	}
+	
+	@Test(expected = Exception.class)
+	public void ponerPeriodicidadMayorATreintaAlPeriodico(){
+		this.miPeriodico.setPeriodicidad(50);
 	}
 }
 

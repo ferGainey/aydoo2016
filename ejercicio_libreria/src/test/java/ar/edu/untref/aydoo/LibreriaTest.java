@@ -14,6 +14,11 @@ public class LibreriaTest {
 	private Cliente federico;
 	private Cliente luis;
 	private Cliente mariano;
+	private ProductoSuscriptible barcelona;
+	private ProductoSuscriptible elGrafico;
+	private Producto elHobbit;
+	private ArticuloDeLibreria lapicera;
+	private ProductoSuscriptible pagina12;
 	
 	@Before
 	public void inicializar(){
@@ -27,6 +32,19 @@ public class LibreriaTest {
 		this.miLibreria.agregarCliente(german);
 		this.miLibreria.agregarCliente(federico);
 		this.miLibreria.agregarCliente(luis);
+		this.barcelona = new Revista("Barcelona");
+		this.barcelona.setPeriodicidad(2);
+		this.barcelona.setPrecio(20.0);
+		this.elGrafico = new Revista("El Grafico");
+		this.elGrafico.setPeriodicidad(1);
+		this.elGrafico.setPrecio(30.0);
+		this.elHobbit = new Libro("El Hobbit");
+		this.elHobbit.setPrecio(50.0);
+		this.lapicera = new ArticuloDeLibreria("Lapicera");
+		this.lapicera.setPrecio(5.0);
+		this.pagina12 = new Periodico("Pagina 12");
+		this.pagina12.setPeriodicidad(30);
+		this.pagina12.setPrecio(12.0);
 	}
 	
 	@Test
