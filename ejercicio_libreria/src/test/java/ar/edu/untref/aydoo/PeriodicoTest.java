@@ -17,9 +17,15 @@ public class PeriodicoTest {
 	}
 
 	@Test
-	public void ponerNombreaALaRevista(){
+	public void ponerNombreaALPeriodico(){
 		Assert.assertEquals("La Nacion", this.miPeriodico.getNombre());
 	}
+	
+	@Test
+	public void ponerPrecioALPeriodico(){
+		Assert.assertEquals(9.80, this.miPeriodico.getPrecio());
+	}
+	
 }
 
 
