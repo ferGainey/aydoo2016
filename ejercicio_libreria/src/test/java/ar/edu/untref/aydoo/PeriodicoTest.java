@@ -28,8 +28,8 @@ public class PeriodicoTest {
 
 	@Test
 	public void ponerPeriodicidadALaRevista(){
-		this.miPeriodico.setPeriodicidad(1);
-		Assert.assertEquals(1, this.miPeriodico.getPeriodicidad());
+		this.miPeriodico.setPeriodicidad(30);
+		Assert.assertEquals(30, this.miPeriodico.getPeriodicidad());
 	}
 
 }
