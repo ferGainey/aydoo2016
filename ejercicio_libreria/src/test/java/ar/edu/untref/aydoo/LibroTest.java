@@ -19,4 +19,10 @@ public class LibroTest {
 		miLibro.setPrecio(25.55);
 		Assert.assertEquals(25.55, miLibro.getPrecio());
 	}
+	
+	@Test(expected = Exception.class)  
+	public void ponerPrecioNegativoAlLibroLanzaException(){
+		Libro miLibro = new Libro("El arte de la guerra");
+		miLibro.setPrecio(-25.55);
+	}
 }

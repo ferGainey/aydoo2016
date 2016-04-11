@@ -19,4 +19,10 @@ public class ArticuloDeLibreriaTest {
 		miArticuloDeLibreria.setPrecio(12.00);
 		Assert.assertEquals(12.00, miArticuloDeLibreria.getPrecio());
 	}
+	
+	@Test(expected = Exception.class)  
+	public void ponerPrecioNegativoAlArticuloDeLibreriaLanzaException(){
+		ArticuloDeLibreria miArticuloDeLibreria = new ArticuloDeLibreria("Plasticola");
+		miArticuloDeLibreria.setPrecio(-10.00);
+	}
 }

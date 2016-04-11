@@ -32,6 +32,10 @@ public class PeriodicoTest {
 		Assert.assertEquals(30, this.miPeriodico.getPeriodicidad());
 	}
 
+	@Test(expected = Exception.class)  
+	public void ponerPrecioNegativoAlPeriodicoLanzaException(){
+		this.miPeriodico.setPrecio(-1.5);
+	}
 }
 
 
