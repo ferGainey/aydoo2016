@@ -133,4 +133,9 @@ public class LibreriaTest {
 	public void laLibreriaPuedeObtenerElNombreDeUnCliente(){
 		Assert.assertEquals("Juan", this.miLibreria.getNombreDeUnCliente(this.juan));
 	}
+	
+	@Test
+	public void laLibreriaPuedeObtenerLaDireccionDeUnCliente(){
+		Assert.assertEquals("Moreno 890", this.miLibreria.getDireccionDeUnCliente(this.juan));
+	}
 }
