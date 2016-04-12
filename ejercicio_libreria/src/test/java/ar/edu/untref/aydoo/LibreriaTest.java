@@ -82,4 +82,25 @@ public class LibreriaTest {
 		this.juan.efectuarCompra(compraClarinSinSuscripcion);
 		Assert.assertEquals(63.0, this.miLibreria.calcularMontoACobrar(marzo,this.juan));
 	}
+	
+	@Test
+	public void laLibreriaCalculaElMontoACobrarParaUnClienteEnUnDeterminadoMesTeniendoComprasEnDistintosMesesYTieneUnaSuscripcion(){
+		Mes agosto = new Mes("Agosto");
+		Mes marzo = new Mes("Marzo");
+		Compra compraHobbit = new Compra(agosto, this.elHobbit);
+		Compra primerLapicera = new Compra(agosto, this.lapicera);
+		Compra segundaLapicera = new Compra(agosto, this.lapicera);
+		Compra elGraficoSinSuscripcion = new Compra(agosto, this.elGrafico);
+		Compra compraClarinSinSuscripcion = new Compra(marzo, this.clarin);
+		Compra compraHobbitEnMarzo = new Compra(marzo, this.elHobbit);
+		Suscripcion suscripcionAPagina12 = new Suscripcion(this.pagina12);
+		this.maria.suscribirseAnualmente(suscripcionAPagina12);
+		this.maria.efectuarCompra(compraHobbit);
+		this.maria.efectuarCompra(primerLapicera);
+		this.maria.efectuarCompra(segundaLapicera);
+		this.maria.efectuarCompra(elGraficoSinSuscripcion);
+		this.maria.efectuarCompra(compraHobbitEnMarzo); //en marzo
+		this.maria.efectuarCompra(compraClarinSinSuscripcion);//en marzo
+		Assert.assertEquals(351.0, this.miLibreria.calcularMontoACobrar(marzo,this.maria));
+	}
 }
