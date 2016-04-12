@@ -4,7 +4,7 @@ package ar.edu.untref.aydoo;
 public abstract class Producto {
 
 	private String nombre;
-	private double precio;
+	protected double precio;
 
 	public Producto(String nombre){
 		this.setNombre(nombre);

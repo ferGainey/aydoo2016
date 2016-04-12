@@ -8,9 +8,11 @@ public class ArticuloDeLibreria extends Producto {
 	
 	/*
 	 * @pre: el producto ya tiene un precio establecido
+	 * @post: devuelve el precio con IVA
 	 */
-	public double getPrecioConIva(){
-		return (this.getPrecio()+(this.getPrecio()*0.21));
+	@Override
+	public double getPrecio(){
+		return (this.precio) * 1.21;
 	}
 
 }

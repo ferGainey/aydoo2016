@@ -7,8 +7,8 @@ public class Cliente {
 
 	private String nombre;
 	private String direccion;
-	List<Suscripcion> suscripciones = new LinkedList<Suscripcion>();
-	List<Compra> registroDeCompras = new LinkedList<Compra>();
+	private List<Suscripcion> suscripciones = new LinkedList<Suscripcion>();
+	private List<Compra> registroDeCompras = new LinkedList<Compra>();
 
 	public Cliente(String nombre, String direccion) {
 		this.nombre = nombre;
@@ -49,4 +49,7 @@ public class Cliente {
 		return this.registroDeCompras;
 	}
 
+	public List<Suscripcion> getRegistroDeSuscripciones(){
+		return this.suscripciones;
+	}
 }
