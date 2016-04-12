@@ -54,4 +54,13 @@ public class LibreriaTest {
 		Assert.assertEquals(92.1, this.miLibreria.calcularMontoACobrar(agosto,this.juan));
 	}
 	
+	@Test
+	public void laLibreriaCalculaElMontoACobrarParaUnClienteEnUnDeterminadoMesConUnProductoConSUscripcionAnual(){
+		Mes enero = new Mes("Enero");
+		Compra compraEjemplarPagina12 = new Compra(enero, this.pagina12);
+		Suscripcion suscripcionBarcelona = new Suscripcion(this.barcelona);
+		this.maria.efectuarCompra(compraEjemplarPagina12);
+		this.maria.suscribirseAnualmente(suscripcionBarcelona);
+		Assert.assertEquals(44.0, this.miLibreria.calcularMontoACobrar(enero,this.maria));
+	}
 }
