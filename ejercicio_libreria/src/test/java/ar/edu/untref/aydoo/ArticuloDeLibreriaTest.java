@@ -12,13 +12,13 @@ public class ArticuloDeLibreriaTest {
 		ArticuloDeLibreria miArticuloDeLibreria = new ArticuloDeLibreria("Plasticola");
 		Assert.assertEquals("Plasticola", miArticuloDeLibreria.getNombre());
 	}
-	
+
 	@Test(expected = Exception.class)  
 	public void ponerPrecioNegativoAlArticuloDeLibreriaLanzaException(){
 		ArticuloDeLibreria miArticuloDeLibreria = new ArticuloDeLibreria("Plasticola");
 		miArticuloDeLibreria.setPrecio(-10.00);
 	}
-	
+
 	@Test
 	public void seCalculaElPrecioConIvaDelProducto(){
 		ArticuloDeLibreria miArticuloDeLibreria = new ArticuloDeLibreria("Plasticola");

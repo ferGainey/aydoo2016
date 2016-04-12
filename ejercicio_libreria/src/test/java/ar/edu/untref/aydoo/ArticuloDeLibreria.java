@@ -5,7 +5,7 @@ public class ArticuloDeLibreria extends Producto {
 	public ArticuloDeLibreria(String nombre) {
 		super(nombre);
 	}
-	
+
 	/*
 	 * @pre: el producto ya tiene un precio establecido
 	 * @post: devuelve el precio con IVA

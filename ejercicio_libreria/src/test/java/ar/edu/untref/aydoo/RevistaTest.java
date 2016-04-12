@@ -31,17 +31,17 @@ public class RevistaTest {
 		this.miRevista.setPeriodicidad(5);
 		Assert.assertEquals(5, this.miRevista.getPeriodicidad());
 	}
-	
+
 	@Test(expected = Exception.class)  
 	public void ponerPrecioNegativoALaRevistaLanzaException(){
 		this.miRevista.setPrecio(-999.99);
 	}
-	
+
 	@Test(expected = Exception.class)
 	public void ponerPeriodicidadNegativaALaRevista(){
 		this.miRevista.setPeriodicidad(-5);
 	}
-	
+
 	@Test(expected = Exception.class)
 	public void ponerPeriodicidadMayorATreintaALaRevista(){
 		this.miRevista.setPeriodicidad(50);

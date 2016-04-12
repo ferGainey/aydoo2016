@@ -17,7 +17,7 @@ public class LibreriaTest {
 	private ArticuloDeLibreria lapicera;
 	private ProductoSuscriptible pagina12;
 	private ProductoSuscriptible clarin;
-	
+
 	@Before
 	public void inicializar(){
 		this.juan = new Cliente("Juan", "Moreno 890");
@@ -39,7 +39,7 @@ public class LibreriaTest {
 		this.clarin.setPeriodicidad(30);
 		this.clarin.setPrecio(13.0);
 	}
-	
+
 	@Test
 	public void laLibreriaCalculaElMontoACobrarParaUnClienteEnUnDeterminadoMes(){
 		Mes agosto = new Mes("Agosto");
@@ -53,7 +53,7 @@ public class LibreriaTest {
 		this.juan.efectuarCompra(elGraficoSinSuscripcion);
 		Assert.assertEquals(92.1, this.miLibreria.calcularMontoACobrar(agosto,this.juan));
 	}
-	
+
 	@Test
 	public void laLibreriaCalculaElMontoACobrarParaUnClienteEnUnDeterminadoMesConUnProductoConSUscripcionAnual(){
 		Mes enero = new Mes("Enero");
@@ -63,7 +63,7 @@ public class LibreriaTest {
 		this.maria.suscribirseAnualmente(suscripcionBarcelona);
 		Assert.assertEquals(44.0, this.miLibreria.calcularMontoACobrar(enero,this.maria));
 	}
-	
+
 	@Test
 	public void laLibreriaCalculaElMontoACobrarParaUnClienteEnUnDeterminadoMesTeniendoComprasEnDistintosMeses(){
 		Mes agosto = new Mes("Agosto");
@@ -82,7 +82,7 @@ public class LibreriaTest {
 		this.juan.efectuarCompra(compraClarinSinSuscripcion);
 		Assert.assertEquals(63.0, this.miLibreria.calcularMontoACobrar(marzo,this.juan));
 	}
-	
+
 	@Test
 	public void laLibreriaCalculaElMontoACobrarParaUnClienteEnUnDeterminadoMesTeniendoComprasEnDistintosMesesYTieneUnaSuscripcion(){
 		Mes agosto = new Mes("Agosto");
@@ -103,7 +103,7 @@ public class LibreriaTest {
 		this.maria.efectuarCompra(compraClarinSinSuscripcion);//en marzo
 		Assert.assertEquals(351.0, this.miLibreria.calcularMontoACobrar(marzo,this.maria));
 	}
-	
+
 	@Test
 	public void laLibreriaCalculaElMontoACobrarParaUnClienteEnUnDeterminadoMesTeniendoComprasEnDistintosMesesYVariasSuscripciones(){
 		Mes agosto = new Mes("Agosto");
@@ -128,12 +128,12 @@ public class LibreriaTest {
 		this.maria.efectuarCompra(compraClarinSinSuscripcionEnMarzo);//en marzo
 		Assert.assertEquals(419.1, this.miLibreria.calcularMontoACobrar(agosto,this.maria));
 	}
-	
+
 	@Test
 	public void laLibreriaPuedeObtenerElNombreDeUnCliente(){
 		Assert.assertEquals("Juan", this.miLibreria.getNombreDeUnCliente(this.juan));
 	}
-	
+
 	@Test
 	public void laLibreriaPuedeObtenerLaDireccionDeUnCliente(){
 		Assert.assertEquals("Moreno 890", this.miLibreria.getDireccionDeUnCliente(this.juan));

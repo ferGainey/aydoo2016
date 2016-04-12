@@ -30,7 +30,7 @@ public class PeriodicoTest {
 	public void ponerPrecioNegativoAlPeriodico(){
 		this.miPeriodico.setPrecio(-5.0);
 	}
-	
+
 	@Test
 	public void ponerPeriodicidadAlPeriodico(){
 		this.miPeriodico.setPeriodicidad(30);
@@ -41,12 +41,12 @@ public class PeriodicoTest {
 	public void ponerPrecioNegativoAlPeriodicoLanzaException(){
 		this.miPeriodico.setPrecio(-1.5);
 	}
-	
+
 	@Test(expected = Exception.class)
 	public void ponerPeriodicidadNegativaAlPeriodico(){
 		this.miPeriodico.setPeriodicidad(-5);
 	}
-	
+
 	@Test(expected = Exception.class)
 	public void ponerPeriodicidadMayorATreintaAlPeriodico(){
 		this.miPeriodico.setPeriodicidad(50);

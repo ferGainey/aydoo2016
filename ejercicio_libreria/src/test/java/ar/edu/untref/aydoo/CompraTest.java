@@ -15,7 +15,7 @@ public class CompraTest {
 	private Mes abril;
 	private Producto cuaderno;
 	private Producto harryPotter;
-	
+
 	@Before
 	public void inicializar(){
 		this.abril = new Mes("Abril");
@@ -29,31 +29,31 @@ public class CompraTest {
 		this.miCompraDeLibro = new Compra(abril, this.harryPotter);
 		this.miCompraDeProductoSuscriptible = new Compra(abril, this.turismo);
 	}
-	
+
 	@Test
 	public void obtenerMesDeLaCompra(){
 		Assert.assertEquals(abril, this.miCompraDeArticuloDeLibreria.getMes());
 	}
-	
+
 	//se le aplica IVA
 	@Test
 	public void obtenerMontoDeLaCompraDeProductoDeLibreria(){
 		Assert.assertEquals(21.175, this.miCompraDeArticuloDeLibreria.getMonto());
 	}
-	
+
 	@Test
 	public void obtenerProductoDeLaCompra(){
 		Assert.assertEquals(this.cuaderno, this.miCompraDeArticuloDeLibreria.getProducto());
 	}
-	
+
 	@Test
 	public void obtenerMontoDeLaCompraDeUnLibro(){
 		Assert.assertEquals(100.0, this.miCompraDeLibro.getMonto());
 	}
-	
+
 	@Test
 	public void obtenerMontoDeUnProductoSuscriptible(){
 		Assert.assertEquals(15.55, this.miCompraDeProductoSuscriptible.getMonto());
 	}
-	
+
 }

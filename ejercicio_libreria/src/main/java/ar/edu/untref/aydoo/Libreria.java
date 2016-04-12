@@ -5,17 +5,17 @@ import java.util.Iterator;
 public class Libreria {
 
 	private static Libreria instance;
-	
+
 	private Libreria(){
 	}
-	
+
 	public static Libreria getInstance(){
 		if(instance == null){
 			instance = new Libreria();
 		}
 		return instance;
 	}
-	
+
 	public double calcularMontoACobrar(Mes mes, Cliente cliente) {
 		double monto=0.0;
 		Iterator<Compra> iterator = cliente.getRegistroDeCompras().iterator();
@@ -37,11 +37,11 @@ public class Libreria {
 		}
 		return monto;
 	}
-	
+
 	public String getDireccionDeUnCliente(Cliente cliente){
 		return cliente.getDireccion();
 	}
-	
+
 	public String getNombreDeUnCliente(Cliente cliente){
 		return cliente.getNombre();
 	}

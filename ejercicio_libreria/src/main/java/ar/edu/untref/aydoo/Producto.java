@@ -28,7 +28,7 @@ public abstract class Producto {
 	}
 
 
-public double getPrecio(){
-	return this.precio;
-}
+	public double getPrecio(){
+		return this.precio;
+	}
 }
