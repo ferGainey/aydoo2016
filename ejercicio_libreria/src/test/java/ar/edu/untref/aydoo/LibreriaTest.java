@@ -20,7 +20,7 @@ public class LibreriaTest {
 	
 	@Before
 	public void inicializar(){
-		this.juan = new Cliente("Luis", "Moreno 890");
+		this.juan = new Cliente("Juan", "Moreno 890");
 		this.maria = new Cliente("Maria", "9 de Julio 604");
 		this.barcelona = new Revista("Barcelona");
 		this.barcelona.setPeriodicidad(2);
@@ -127,5 +127,10 @@ public class LibreriaTest {
 		this.maria.efectuarCompra(compraHobbitEnMarzo); //en marzo
 		this.maria.efectuarCompra(compraClarinSinSuscripcionEnMarzo);//en marzo
 		Assert.assertEquals(419.1, this.miLibreria.calcularMontoACobrar(agosto,this.maria));
+	}
+	
+	@Test
+	public void laLibreriaPuedeObtenerElNombreDeUnCliente(){
+		Assert.assertEquals("Juan", this.miLibreria.getNombreDeUnCliente(this.juan));
 	}
 }

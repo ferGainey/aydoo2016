@@ -32,8 +32,13 @@ public class Cliente {
 	}
 
 	public void suscribirseEnUnMes(Mes mes, Suscripcion suscripcion) {
-		suscripcion.setMes(mes);
-		this.suscripciones.add(suscripcion);
+		if(suscripcion.getEsAnual() == false && suscripcion.getMes() == null){
+			suscripcion.setMes(mes);
+			this.suscripciones.add(suscripcion);
+		}
+		else{
+			System.out.println("Esa suscripcion ya esta siendo usada");
+		}
 	}
 
 	public void suscribirseAnualmente(Suscripcion suscripcion) {

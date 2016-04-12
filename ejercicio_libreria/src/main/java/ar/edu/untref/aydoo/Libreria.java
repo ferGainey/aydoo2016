@@ -37,4 +37,12 @@ public class Libreria {
 		}
 		return monto;
 	}
+	
+	public String getDireccionDeUnCliente(Cliente cliente){
+		return cliente.getDireccion();
+	}
+	
+	public String getNombreDeUnCliente(Cliente cliente){
+		return cliente.getNombre();
+	}
 }
