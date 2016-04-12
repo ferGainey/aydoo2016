@@ -13,13 +13,6 @@ public class ArticuloDeLibreriaTest {
 		Assert.assertEquals("Plasticola", miArticuloDeLibreria.getNombre());
 	}
 	
-	@Test
-	public void ponerPrecioAlArticuloDeLibreria(){
-		ArticuloDeLibreria miArticuloDeLibreria = new ArticuloDeLibreria("Plasticola");
-		miArticuloDeLibreria.setPrecio(12.00);
-		Assert.assertEquals(12.00, miArticuloDeLibreria.getPrecio());
-	}
-	
 	@Test(expected = Exception.class)  
 	public void ponerPrecioNegativoAlArticuloDeLibreriaLanzaException(){
 		ArticuloDeLibreria miArticuloDeLibreria = new ArticuloDeLibreria("Plasticola");
@@ -31,6 +24,6 @@ public class ArticuloDeLibreriaTest {
 		ArticuloDeLibreria miArticuloDeLibreria = new ArticuloDeLibreria("Plasticola");
 		miArticuloDeLibreria.setPrecio(5.00);
 		double valorEsperado = 5.0 + (5.0 * 0.21);
-		Assert.assertEquals(valorEsperado, miArticuloDeLibreria.getPrecioConIva());
+		Assert.assertEquals(valorEsperado, miArticuloDeLibreria.getPrecio());
 	}
 }
