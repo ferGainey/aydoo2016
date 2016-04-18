@@ -29,7 +29,7 @@ public class CalculadorDeFactoresPrimosTest
 		ArrayList<Integer> resultado = this.miCalculador.getListaDeDivisoresPrimos();
 		Assert.assertEquals(esperado, resultado);
 	}
-/*
+
 	@Test
 	public void descomposicionDelQuince()
 	{
@@ -57,14 +57,13 @@ public class CalculadorDeFactoresPrimosTest
 	@Test
 	public void descomposicionDelMilSetecientosNueve()
 	{
-		Program program = new Program();
 		ArrayList<Integer> esperado = new ArrayList<Integer>();
 		esperado.add(0,1709);
-		program.resolver(1709);
-		ArrayList<Integer> result = program.listaDivisoresPrimos;
-		Assert.assertEquals(esperado, result);
+		this.miCalculador.resolver(1709);
+		ArrayList<Integer> resultado = this.miCalculador.getListaDeDivisoresPrimos();
+		Assert.assertEquals(esperado, resultado);
 	}
-
+/*
 	@Test
 	public void invertirListaDeVariosElementos(){
 		Program program = new Program();
