@@ -23,32 +23,6 @@ public class Impresora {
 		this.listaDivisoresPrimos = listaDivisoresPrimos;
 	}
 
-	/*
-	public String getFormato() {
-		return formato;
-	}
-
-	public void setFormato(String formato) {
-		this.formato = formato;
-	}
-
-	public String getOrden() {
-		return orden;
-	}
-
-	public void setOrden(String orden) {
-		this.orden = orden;
-	}
-
-	public String getNombreDeArchivo() {
-		return nombreDeArchivo;
-	}
-
-	public void setEnArchivo(String nombreDeArchivo) {
-		this.nombreDeArchivo = nombreDeArchivo;
-	}
-
-	*/
 	public ArrayList<Integer> getListaDivisoresPrimos(){
 		return this.listaDivisoresPrimos;
 	}
@@ -114,7 +88,6 @@ public class Impresora {
 			BufferedWriter bw = new BufferedWriter(w);
 			PrintWriter wr = new PrintWriter(bw);  
 			wr.write(impresion);//escribimos en el archivo
-			//wr.append(" - y aqui continua"); //concatenamos en el archivo sin borrar lo existente
 			//ahora cerramos los flujos de canales de datos, al cerrarlos el archivo quedará guardado con información escrita
 			//de no hacerlo no se escribirá nada en el archivo
 			wr.close();

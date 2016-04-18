@@ -17,7 +17,6 @@ public class CalculadorDeFactoresPrimosTest{
 		Assert.assertEquals(esperado, resultado);
 	}
 
-
 	@Test
 	public void descomposicionDelUno(){
 		ArrayList<Integer> esperado = new ArrayList<Integer>();
