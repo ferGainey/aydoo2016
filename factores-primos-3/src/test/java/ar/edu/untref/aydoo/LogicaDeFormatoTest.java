@@ -26,6 +26,13 @@ public class LogicaDeFormatoTest {
 		miLogica.interpretarFormato();
 		Assert.assertEquals("pretty", miLogica.getTipoDeFormato());
 	}
+	
+	@Test
+	public void interpretarFormatoPrettyConMayusculasYMinusculas(){
+		LogicaDeFormato miLogica = new LogicaDeFormato("--format=prETtY");
+		miLogica.interpretarFormato();
+		Assert.assertEquals("pretty", miLogica.getTipoDeFormato());
+	}
 	/*
 
 
@@ -37,19 +44,6 @@ public class LogicaDeFormatoTest {
 		program.setFormato("cualquier cosa");
 		program.leer();
 		Assert.assertEquals(1, program.getTipoDeFormato());
-	}
-
-	
-	@Test
-	public void pruebaSepararPalabra(){
-		Program program = new Program();
-		program.setFormato("--format=quiet");
-		String [] palabraSeparada = program.separarPalabra(program.getFormato());
-		String palabra1 = palabraSeparada[0];
-		String palabra2 = palabraSeparada[1];
-		Assert.assertEquals("--format", palabra1);
-		Assert.assertEquals("quiet", palabra2);
-		Assert.assertEquals(2, palabraSeparada.length);
 	}
 
 
