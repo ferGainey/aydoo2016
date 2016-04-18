@@ -82,4 +82,12 @@ public class LogicaDeFormatoTest {
 		miLogica.interpretarTipoDeEscritura();
 		Assert.assertEquals("no", miLogica.getEscrituraEnArchivo());
 	}
+	
+	//cuando el se indica como output un archivo
+	@Test
+	public void interpretarNombreDeArchivo(){
+		LogicaDeFormato miLogica = new LogicaDeFormato("--output-file=salida.txt");
+		miLogica.interpretarTipoDeEscritura();
+		Assert.assertEquals("salida.txt", miLogica.getEscrituraEnArchivo());
+	}
 }
