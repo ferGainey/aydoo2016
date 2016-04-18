@@ -33,6 +33,13 @@ public class LogicaDeFormatoTest {
 		miLogica.interpretarFormato();
 		Assert.assertEquals("pretty", miLogica.getTipoDeFormato());
 	}
+	
+	@Test
+	public void interpretarFormatoNoAceptado(){
+		LogicaDeFormato miLogica = new LogicaDeFormato("--format=yerba");
+		miLogica.interpretarFormato();
+		Assert.assertEquals("formato no aceptado", miLogica.getTipoDeFormato());
+	}
 	/*
 
 
