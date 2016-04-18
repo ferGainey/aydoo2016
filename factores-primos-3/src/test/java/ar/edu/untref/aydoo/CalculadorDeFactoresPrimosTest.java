@@ -19,7 +19,7 @@ public class CalculadorDeFactoresPrimosTest
 		Assert.assertEquals(esperado, resultado);
 	}
 	
-	/*
+	
 	@Test
 	public void descomposicionDelUno()
 	{
@@ -29,7 +29,7 @@ public class CalculadorDeFactoresPrimosTest
 		ArrayList<Integer> resultado = this.miCalculador.getListaDeDivisoresPrimos();
 		Assert.assertEquals(esperado, resultado);
 	}
-
+/*
 	@Test
 	public void descomposicionDelQuince()
 	{
