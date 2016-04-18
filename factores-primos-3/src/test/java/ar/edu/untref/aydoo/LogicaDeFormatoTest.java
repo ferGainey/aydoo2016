@@ -40,6 +40,16 @@ public class LogicaDeFormatoTest {
 		miLogica.interpretarFormato();
 		Assert.assertEquals("formato no aceptado", miLogica.getTipoDeFormato());
 	}
+	
+	/*como no pone nunca que va a querer escribir en algun formato (con la palabra --format)
+	 *entonces corre por defecto el formato pretty
+	 */
+	@Test
+	public void interpretarQueNoSeRecibioParametro(){
+		LogicaDeFormato miLogica = new LogicaDeFormato("");
+		miLogica.interpretarFormato();
+		Assert.assertEquals("pretty", miLogica.getTipoDeFormato());
+	}
 	/*
 
 
@@ -54,12 +64,5 @@ public class LogicaDeFormatoTest {
 	}
 
 
-	@Test
-	public void leerFormatoInexistente(){
-		Program program = new Program();
-		program.setFormato("--format=yerbas");
-		program.leer();
-		Assert.assertEquals(3, program.getTipoDeFormato());
-	}
 	 */
 }
