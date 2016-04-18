@@ -65,4 +65,11 @@ public class LogicaDeFormatoTest {
 		miLogica.interpretarOrden();
 		Assert.assertEquals("asc", miLogica.getOrden());
 	}
+	
+	@Test
+	public void interpretarOrdenDeEscrituraDescendente(){
+		LogicaDeFormato miLogica = new LogicaDeFormato("--sort:des");
+		miLogica.interpretarOrden();
+		Assert.assertEquals("des", miLogica.getOrden());
+	}
 }
