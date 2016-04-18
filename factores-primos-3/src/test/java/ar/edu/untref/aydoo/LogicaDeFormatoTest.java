@@ -108,4 +108,15 @@ public class LogicaDeFormatoTest {
 		Assert.assertEquals("des", miLogica.getOrden());
 		Assert.assertEquals("salida.txt", miLogica.getEscrituraEnArchivo());
 	}
+	
+	@Test
+	public void interpretarFormatoOrdenYNombreDeArchivoALaVezDesordenados(){
+		LogicaDeFormato miLogica = new LogicaDeFormato(" --output-file=salida.txt --sort:des --format=quiet");
+		miLogica.interpretarFormato();
+		miLogica.interpretarOrden();
+		miLogica.interpretarTipoDeEscritura();
+		Assert.assertEquals("quiet", miLogica.getTipoDeFormato());
+		Assert.assertEquals("des", miLogica.getOrden());
+		Assert.assertEquals("salida.txt", miLogica.getEscrituraEnArchivo());
+	}
 }
