@@ -72,4 +72,14 @@ public class LogicaDeFormatoTest {
 		miLogica.interpretarOrden();
 		Assert.assertEquals("des", miLogica.getOrden());
 	}
+	
+	/*el campo escrituraEnArchivo indica el nombre del archivo si se indica de que la salida es por archivo, y si no
+	 * indica "no" que significa que no es por archivo. Y por defecto es por consola. 
+	 */
+	@Test
+	public void porDefectoLaEscrituraEsEnConsola(){
+		LogicaDeFormato miLogica = new LogicaDeFormato("");
+		miLogica.interpretarTipoDeEscritura();
+		Assert.assertEquals("no", miLogica.getEscrituraEnArchivo());
+	}
 }
