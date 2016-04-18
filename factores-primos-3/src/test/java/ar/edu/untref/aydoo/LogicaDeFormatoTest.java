@@ -90,4 +90,11 @@ public class LogicaDeFormatoTest {
 		miLogica.interpretarTipoDeEscritura();
 		Assert.assertEquals("salida.txt", miLogica.getEscrituraEnArchivo());
 	}
+	
+	@Test
+	public void interpretarRutaYNombreDeArchivo(){
+		LogicaDeFormato miLogica = new LogicaDeFormato("--output-file=/home/fernando/salida.txt");
+		miLogica.interpretarTipoDeEscritura();
+		Assert.assertEquals("/home/fernando/salida.txt", miLogica.getEscrituraEnArchivo());
+	}
 }
