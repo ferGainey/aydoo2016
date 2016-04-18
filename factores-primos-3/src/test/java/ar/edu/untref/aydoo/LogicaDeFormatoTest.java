@@ -50,19 +50,11 @@ public class LogicaDeFormatoTest {
 		miLogica.interpretarFormato();
 		Assert.assertEquals("pretty", miLogica.getTipoDeFormato());
 	}
-	/*
 
-
-	// como no pone nunca que va a querer escribir en algun formato (con la palabra --format)
-	// entonces corre por defecto el formato pretty
 	@Test
-	public void leerAlgoQueNoPoneFormat(){
-		Program program = new Program();
-		program.setFormato("cualquier cosa");
-		program.leer();
-		Assert.assertEquals(1, program.getTipoDeFormato());
+	public void interpretarOrdenDeEscrituraAscendente(){
+		LogicaDeFormato miLogica = new LogicaDeFormato("--sort:asc");
+		miLogica.interpretarOrden();
+		Assert.assertEquals("asc", miLogica.getOrden());
 	}
-
-
-	 */
 }
