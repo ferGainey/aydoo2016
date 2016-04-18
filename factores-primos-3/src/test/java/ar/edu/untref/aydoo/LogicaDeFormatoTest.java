@@ -50,6 +50,14 @@ public class LogicaDeFormatoTest {
 		miLogica.interpretarFormato();
 		Assert.assertEquals("pretty", miLogica.getTipoDeFormato());
 	}
+	
+	//por defecto el orden de escritura es ascendente
+	@Test
+	public void interpretarOrdenDeEscrituraPorDefecto(){
+		LogicaDeFormato miLogica = new LogicaDeFormato("");
+		miLogica.interpretarOrden();
+		Assert.assertEquals("asc", miLogica.getOrden());
+	}
 
 	@Test
 	public void interpretarOrdenDeEscrituraAscendente(){
