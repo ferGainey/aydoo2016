@@ -61,4 +61,9 @@ public class CalculadorDeFactoresPrimosTest{
 	public void ingresoDelCeroLanzaExcepcion(){
 		this.miCalculador.resolver(0);
 	}
+	
+	@Test(expected = EntradaIncorrectaException.class) 
+	public void ingresoDeUnNumeroNegativoLanzaExcepcion(){
+		this.miCalculador.resolver(-15);
+	}
 }
