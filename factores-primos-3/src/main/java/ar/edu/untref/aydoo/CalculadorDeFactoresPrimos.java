@@ -6,22 +6,32 @@ public class CalculadorDeFactoresPrimos {
 
 	private ArrayList<Integer> listaDivisoresPrimos = new ArrayList<Integer>();
 
-	public void resolver(int numero){
-		int numeroActual = numero;
-		int divisorCandidato = 2;
-		while(esPrimo(numeroActual)==false){
-			if(numeroActual % divisorCandidato == 0){
-				numeroActual = numeroActual/divisorCandidato;
-				listaDivisoresPrimos.add(divisorCandidato);
-			}
-			else{
-				divisorCandidato++;
-				while(esPrimo(divisorCandidato)==false){
+	/*
+	 *@pre: se ingresa el numero que se desea que sea descompuesto en factores primos. EL numero tiene que ser
+	 *mayor a cero.
+	 *@post: genera una lista con la descomposicion en factores primos. Si el numero ingresado es
+	 */
+	public void resolver(int numero) throws EntradaIncorrectaException{
+		if(numero>0){
+			int numeroActual = numero;
+			int divisorCandidato = 2;
+			while(esPrimo(numeroActual)==false){
+				if(numeroActual % divisorCandidato == 0){
+					numeroActual = numeroActual/divisorCandidato;
+					listaDivisoresPrimos.add(divisorCandidato);
+				}
+				else{
 					divisorCandidato++;
+					while(esPrimo(divisorCandidato)==false){
+						divisorCandidato++;
+					}
 				}
 			}
+			listaDivisoresPrimos.add(numeroActual);
 		}
-		listaDivisoresPrimos.add(numeroActual);
+		else{
+			throw new EntradaIncorrectaException("El numero que se ingresa tiene que ser mayor a 0");
+		}
 	}
 
 	//se aplican una serie de algoritmos para reducir comparaciones

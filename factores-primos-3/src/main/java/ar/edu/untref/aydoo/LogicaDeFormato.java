@@ -18,7 +18,10 @@ public class LogicaDeFormato {
 		return palabrasSeparadas;
 	}
 
-
+	/*
+	 * post: interpreta el tipo de formato que se recibe (que esta en palabraSeparada). Ve si es pretty, quiet
+	 * o formato no aceptado. Por defecto es pretty
+	 */
 	public void interpretarFormato(){
 		String[] palabras = this.getPalabraSeparada();
 		for(int i = 0; i<palabras.length; i++){
@@ -55,14 +58,20 @@ public class LogicaDeFormato {
 		this.tipoDeFormato = "quiet";
 	}
 
-	public String[] getPalabraSeparada() {
+	private String[] getPalabraSeparada() {
 		return palabraSeparada;
 	}
 
+	/*
+	 * @post: devuelve el tipo de formato: pretty o quiet
+	 */
 	public String getTipoDeFormato() {
 		return tipoDeFormato;
 	}
 
+	/*
+	 * @post: interpreta el tipo de orden que se ingreso si es asc o des. Si no se indica, por defecto es asc.
+	 */
 	public void interpretarOrden(){
 		String[] palabras = this.getPalabraSeparada();
 		for(int i = 0; i<palabras.length; i++){
@@ -84,11 +93,18 @@ public class LogicaDeFormato {
 	private void setOrdenAscendente() {
 		this.orden = "asc";
 	}
-
+	
+	/*
+	 * @post: devuelve el tipo de orden: "asc" o "des". Por defecto esta puesto "asc" (ascendente)
+	 */
 	public String getOrden(){
 		return this.orden;
 	}
 
+	/*
+	 * @post: interpreta si se va a escribir en archivo o consola. En caso de que sea por archivo, toma el 
+	 * nombre del archivo y se lo guarda en un atributo. Por defecto es por consola
+	 */
 	public void interpretarTipoDeEscritura(){
 		String[] palabras = this.getPalabraSeparada();
 		for(int i = 0; i<palabras.length; i++){
@@ -100,11 +116,15 @@ public class LogicaDeFormato {
 			}
 		}
 	}
-
+	
 	private void setEscrituraEnArchivo(String nombreDeArchivo) {
 		this.escrituraEnArchivo = nombreDeArchivo;
 	}
 
+	/*
+	 * @pre: se ejecuto el metodo interpretarTipoDeEscritura
+	 * @post:devuelve el nombre del archivo si se especifico que escriba en un archivo y "no" si no se pidio eso
+	 */
 	public String getEscrituraEnArchivo(){
 		return this.escrituraEnArchivo;
 	}

@@ -22,7 +22,11 @@ public class Program
 		this.miLogicaDeFormato.interpretarOrden();
 		this.miLogicaDeFormato.interpretarTipoDeEscritura();
 		this.miCalculador = new CalculadorDeFactoresPrimos();
+		try{
 		this.miCalculador.resolver(numeroRecibido);
+		}catch(EntradaIncorrectaException miException){
+			System.out.println(miException.getMessage());
+		}
 		Impresora miImpresora = new Impresora(this.miLogicaDeFormato.getTipoDeFormato(), this.miLogicaDeFormato.getOrden(), this.miLogicaDeFormato.getEscrituraEnArchivo(), this.miCalculador.getListaDeDivisoresPrimos());
 		miImpresora.imprimir(numeroRecibido);
 	}

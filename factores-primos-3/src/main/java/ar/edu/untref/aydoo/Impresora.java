@@ -23,10 +23,13 @@ public class Impresora {
 		this.listaDivisoresPrimos = listaDivisoresPrimos;
 	}
 
-	public ArrayList<Integer> getListaDivisoresPrimos(){
-		return this.listaDivisoresPrimos;
-	}
-
+	/*
+	 * @pre: recibe el numero del cual se calcula la descomposicion por factores primos, el resto de los datos que
+	 * necesita ya los recibe por el constructor
+	 * 
+	 *  @post: segun la informacion que recibe hace la impresion (por consola o en archivo) en el formato y orden
+	 *  que se le indico
+	 */
 	public void imprimir(int numero){
 		String impresion = "";
 		if(this.formato.equals("pretty")){

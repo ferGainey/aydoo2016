@@ -57,4 +57,8 @@ public class CalculadorDeFactoresPrimosTest{
 		Assert.assertEquals(esperado, resultado);
 	}
 
+	@Test(expected = EntradaIncorrectaException.class) 
+	public void ingresoDelCeroLanzaExcepcion(){
+		this.miCalculador.resolver(0);
+	}
 }
