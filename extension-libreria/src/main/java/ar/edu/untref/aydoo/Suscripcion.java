@@ -2,18 +2,18 @@ package ar.edu.untref.aydoo;
 
 public class Suscripcion {
 	private Cliente miCliente;
-	private Producto nuevoProducto;
+	private ProductoSuscribible nuevoProducto;
 	private String periodicidad; 
 	private String mes;
 	private String tiempoDeSuscripcion;
 	
-	public Suscripcion(Cliente nuevoCliente, Producto nuevoProducto, String mes){
+	public Suscripcion(Cliente nuevoCliente, ProductoSuscribible nuevoProducto, String mes){
 		this.setMiCliente(nuevoCliente);
 		this.setNuevoProducto(nuevoProducto);
 		this.setPeriodicidad(nuevoProducto.getPeriodicidad());
 		this.setMes(mes);
 	}
-	public Suscripcion(Cliente nuevoCliente, Producto nuevoProducto, String mes, String tiempoDeSuscripcion){
+	public Suscripcion(Cliente nuevoCliente, ProductoSuscribible nuevoProducto, String mes, String tiempoDeSuscripcion){
 		this.setMiCliente(nuevoCliente);
 		this.setNuevoProducto(nuevoProducto);
 		this.setPeriodicidad(nuevoProducto.getPeriodicidad());
@@ -26,10 +26,10 @@ public class Suscripcion {
 	private void setMiCliente(Cliente miCliente) {
 		this.miCliente = miCliente;
 	}
-	public Producto getNuevoProducto() {
+	public ProductoSuscribible getNuevoProducto() {
 		return nuevoProducto;
 	}
-	private void setNuevoProducto(Producto nuevoProducto) {
+	private void setNuevoProducto(ProductoSuscribible nuevoProducto) {
 		this.nuevoProducto = nuevoProducto;
 	}
 	private void setPeriodicidad(String periodicidad) {

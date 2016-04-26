@@ -1,8 +1,9 @@
 package ar.edu.untref.aydoo;
 
-public class Periodico extends Producto {
-
-	public Periodico(double precio,String asignarPeriodicidad) {
-		super(precio, asignarPeriodicidad);
+public class Periodico extends ProductoSuscribible {
+	
+	public Periodico(double precio) {
+		super(precio);
 	}
+	
 }

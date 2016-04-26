@@ -18,12 +18,16 @@ public class IntegracionTest {
 
 	@Before
 	public void initialize(){
-		barcelona = new Revista(20,"quincenal");
-		elGrafico = new Revista(30, "mensual");
-		hobbit = new Libro(50,"unica");
-		lapicera = new ArticuloDeLibreria(5,"unica");
-		pagina12 = new Periodico(12,"diaria");
-		clarin = new Periodico(13,"diaria");
+		barcelona = new Revista(20);
+		barcelona.setPeriodicidad("quincenal");
+		elGrafico = new Revista(30);
+		elGrafico.setPeriodicidad("mensual");
+		hobbit = new Libro(50);
+		lapicera = new ArticuloDeLibreria(5);
+		pagina12 = new Periodico(12);
+		pagina12.setPeriodicidad("diaria");
+		clarin = new Periodico(13);
+		clarin.setPeriodicidad("diaria");
 
 		juan = new Cliente("Juan");
 		maria = new Cliente("Maria");

@@ -12,13 +12,15 @@ public class SuscripcionTest {
 	@Before
 	public void initialize(){
 		juan = new Cliente("Juan");
-		pagina12 = new Periodico(12,"diaria");
+		pagina12 = new Periodico(12);
+		pagina12.setPeriodicidad("diaria");
 		nuevaSuscripcion = new Suscripcion(juan, pagina12, "agosto");
 	}
 	
 	@Test
 	public void verCantidadDeVecesACombrarSiPeriodicidadEsDiaria(){
-		pagina12 = new Periodico(12,"diaria");
+		pagina12 = new Periodico(12);
+		pagina12.setPeriodicidad("diaria");
 		nuevaSuscripcion = new Suscripcion(juan, pagina12, "agosto");
 		
 		int cantidadDeVeces = nuevaSuscripcion.getCantidadDeEjemplaresPorMes();
@@ -28,7 +30,8 @@ public class SuscripcionTest {
 	
 	@Test
 	public void cantidadDeVecesACobrarSiEsMensual(){
-		pagina12 = new Periodico(12,"mensual");
+		pagina12 = new Periodico(12);
+		pagina12.setPeriodicidad("mensual");
 		nuevaSuscripcion = new Suscripcion(juan, pagina12, "agosto");
 		
 		int cantidadDeVeces = nuevaSuscripcion.getCantidadDeEjemplaresPorMes();
@@ -37,7 +40,8 @@ public class SuscripcionTest {
 	}
 	@Test
 	public void cantidadDeVecesACobrarSiEsQuincenal(){
-		pagina12 = new Periodico(12,"quincenal");
+		pagina12 = new Periodico(12);
+		pagina12.setPeriodicidad("quincenal");
 		nuevaSuscripcion = new Suscripcion(juan, pagina12, "agosto");
 		
 		int cantidadDeVeces = nuevaSuscripcion.getCantidadDeEjemplaresPorMes();

@@ -7,7 +7,7 @@ public class ArticuloDeLibreriaTest {
 
 	@Test 
 	public void CargandoUnArticuloDeLibreriaYPidiendoPrecioQueInluyeIva() {
-		Producto miProducto = new ArticuloDeLibreria(10,"unica");
+		Producto miProducto = new ArticuloDeLibreria(10);
 		Assert.assertEquals(12.1, miProducto.getPrecio(),00.1);
 	}
 }

@@ -1,8 +1,8 @@
 package ar.edu.untref.aydoo;
 
-public class Revista extends Producto{
+public class Revista extends ProductoSuscribible{
 
-	public Revista(double precio, String asignarPeriodicidad) {
-		super(precio, asignarPeriodicidad);
+	public Revista(double precio) {
+		super(precio);
 	}
 }
