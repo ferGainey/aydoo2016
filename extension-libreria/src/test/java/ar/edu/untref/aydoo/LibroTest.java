@@ -5,10 +5,10 @@ import org.junit.Assert;
 
 public class LibroTest {
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void unLibroSeCreaConUnPrecio(){
 		Libro harryPotter = new Libro(250);
-		Assert.assertEquals(250, harryPotter.getPrecio());
+		Assert.assertEquals(250, harryPotter.getPrecio(), 0.01);
 	}
+
 }

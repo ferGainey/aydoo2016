@@ -5,4 +5,5 @@ public class Revista extends ProductoSuscribible{
 	public Revista(double precio) {
 		super(precio);
 	}
+
 }

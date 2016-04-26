@@ -1,7 +1,7 @@
 package ar.edu.untref.aydoo;
 
 public abstract class ProductoSuscribible extends Producto{
-	
+
 	private String periodicidad;
 
 	public ProductoSuscribible(double precio) {
@@ -12,7 +12,7 @@ public abstract class ProductoSuscribible extends Producto{
 	 * @post: se le indica la periodicidad que la revista tiene por mes. E
 	 */
 	public void setPeriodicidad(String periodicidad) {
-			this.periodicidad = periodicidad;
+		this.periodicidad = periodicidad;
 	}
 
 	/*
@@ -22,4 +22,5 @@ public abstract class ProductoSuscribible extends Producto{
 	public String getPeriodicidad() {
 		return this.periodicidad;
 	}
+
 }

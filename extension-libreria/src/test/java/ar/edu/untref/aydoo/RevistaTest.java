@@ -10,11 +10,12 @@ public class RevistaTest {
 		ProductoSuscribible elGrafico = new Revista(45);
 		Assert.assertEquals(45, elGrafico.getPrecio(), 0.1);
 	}
-	
+
 	@Test
 	public void aUnaRevistaSeLePoneUnaPeriodicidad(){
 		ProductoSuscribible elGrafico = new Revista(45);
 		elGrafico.setPeriodicidad("quincenal");
 		Assert.assertEquals("quincenal", elGrafico.getPeriodicidad());
 	}
+
 }

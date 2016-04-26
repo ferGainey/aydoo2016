@@ -10,4 +10,5 @@ public class ArticuloDeLibreriaTest {
 		Producto miProducto = new ArticuloDeLibreria(10);
 		Assert.assertEquals(12.1, miProducto.getPrecio(),00.1);
 	}
+	
 }

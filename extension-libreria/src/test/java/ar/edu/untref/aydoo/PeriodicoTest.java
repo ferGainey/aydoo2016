@@ -10,11 +10,12 @@ public class PeriodicoTest {
 		ProductoSuscribible laNacion = new Periodico(25);
 		Assert.assertEquals(25, laNacion.getPrecio(), 0.1);
 	}
-	
+
 	@Test
 	public void aUnPeriodicoSeLePoneUnaPeriodicidad(){
 		ProductoSuscribible laNacion = new Periodico(22);
 		laNacion.setPeriodicidad("diario");
 		Assert.assertEquals("diario", laNacion.getPeriodicidad());
 	}
+
 }

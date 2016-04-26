@@ -5,17 +5,19 @@ import java.util.List;
 import java.util.Iterator;
 
 public class Libreria {
-	
+
 	List<Cliente> listaDeClientes = new LinkedList<>();
 	List<Compra> listaDeCompras = new LinkedList<>();
 	List<Suscripcion> listaDeSuscripciones = new LinkedList<>();
-	
+
 	public void addCliente(Cliente nuevoCliente) {
 		listaDeClientes.add(nuevoCliente);
 	}
+
 	public void nuevaCompra(Compra compra) {
 		listaDeCompras.add(compra);
 	}
+
 	public double CalcularMontoACrobar(String mes, Cliente miCliente) {
 		double montoACobrar = 0;
 		double montoDescuento = 0;
@@ -38,7 +40,9 @@ public class Libreria {
 		}
 		return montoACobrar - montoDescuento;
 	}
+
 	public void nuevaSuscripcion(Suscripcion nuevaSuscripcion) {
 		listaDeSuscripciones.add(nuevaSuscripcion);
 	}
+
 }

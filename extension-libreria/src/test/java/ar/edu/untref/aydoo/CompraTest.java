@@ -12,7 +12,7 @@ public class CompraTest {
 		Compra miCompra = new Compra(mariano,lapiz, 1, "abril");
 		Assert.assertEquals(miCompra.getMes(), "abril");
 	}
-	
+
 	@Test
 	public void unaCompraSeCreaConUnaCantidad(){
 		Cliente mariano = new Cliente("Mariano");
@@ -20,7 +20,7 @@ public class CompraTest {
 		Compra miCompra = new Compra(mariano,lapiz, 3, "abril");
 		Assert.assertEquals(miCompra.getCantidad(), 3);
 	}
-	
+
 	@Test (expected = CantidadNegativaException.class)
 	public void noSePuedeIngresarUnaCantidadNegativaDeProductos(){
 		Cliente mariano = new Cliente("Mariano");
@@ -28,7 +28,7 @@ public class CompraTest {
 		@SuppressWarnings("unused")
 		Compra miCompra = new Compra(mariano,lapiz, -5, "abril");
 	}
-	
+
 	@Test
 	public void puedoObtenerQueProductoEstaEnLaCompra(){
 		Cliente mariano = new Cliente("Mariano");
