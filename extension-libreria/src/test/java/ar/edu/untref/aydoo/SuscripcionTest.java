@@ -5,21 +5,21 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class SuscripcionTest {
-	Periodico Pagina12;
-	Cliente Juan;
-	Suscripcion nuevaSuscripcion;
+	private Periodico pagina12;
+	private Cliente juan;
+	private Suscripcion nuevaSuscripcion;
 	
 	@Before
 	public void initialize(){
-		Juan = new Cliente("Juan");
-		Pagina12 = new Periodico(12,"diaria");
-		nuevaSuscripcion = new Suscripcion(Juan, Pagina12, "agosto");
+		juan = new Cliente("Juan");
+		pagina12 = new Periodico(12,"diaria");
+		nuevaSuscripcion = new Suscripcion(juan, pagina12, "agosto");
 	}
 	
 	@Test
 	public void verCantidadDeVecesACombrarSiPeriodicidadEsDiaria(){
-		Pagina12 = new Periodico(12,"diaria");
-		nuevaSuscripcion = new Suscripcion(Juan, Pagina12, "agosto");
+		pagina12 = new Periodico(12,"diaria");
+		nuevaSuscripcion = new Suscripcion(juan, pagina12, "agosto");
 		
 		int cantidadDeVeces = nuevaSuscripcion.getCantidadDeEjemplaresPorMes();
 		
@@ -28,8 +28,8 @@ public class SuscripcionTest {
 	
 	@Test
 	public void cantidadDeVecesACobrarSiEsMensual(){
-		Pagina12 = new Periodico(12,"mensual");
-		nuevaSuscripcion = new Suscripcion(Juan, Pagina12, "agosto");
+		pagina12 = new Periodico(12,"mensual");
+		nuevaSuscripcion = new Suscripcion(juan, pagina12, "agosto");
 		
 		int cantidadDeVeces = nuevaSuscripcion.getCantidadDeEjemplaresPorMes();
 		
@@ -37,8 +37,8 @@ public class SuscripcionTest {
 	}
 	@Test
 	public void cantidadDeVecesACobrarSiEsQuincenal(){
-		Pagina12 = new Periodico(12,"quincenal");
-		nuevaSuscripcion = new Suscripcion(Juan, Pagina12, "agosto");
+		pagina12 = new Periodico(12,"quincenal");
+		nuevaSuscripcion = new Suscripcion(juan, pagina12, "agosto");
 		
 		int cantidadDeVeces = nuevaSuscripcion.getCantidadDeEjemplaresPorMes();
 		
