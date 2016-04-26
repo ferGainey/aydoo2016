@@ -18,7 +18,7 @@ public class Libreria {
 		listaDeCompras.add(compra);
 	}
 
-	public double CalcularMontoACrobar(String mes, Cliente miCliente) {
+	public double calcularMontoACobrar(String mes, Cliente miCliente) {
 		double montoACobrar = 0;
 		double montoDescuento = 0;
 		Iterator<Compra> it = listaDeCompras.iterator();
