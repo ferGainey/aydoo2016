@@ -6,9 +6,10 @@ import java.util.Iterator;
 
 public class Libreria {
 
-	List<Cliente> listaDeClientes = new LinkedList<>();
-	List<Compra> listaDeCompras = new LinkedList<>();
-	List<Suscripcion> listaDeSuscripciones = new LinkedList<>();
+	List<Cliente> listaDeClientes = new LinkedList<Cliente>();
+	List<Compra> listaDeCompras = new LinkedList<Compra>();
+	List<Suscripcion> listaDeSuscripciones = new LinkedList<Suscripcion>();
+	List<AlquilerDeLibro> listaDeAlquilerDeLibros = new LinkedList<AlquilerDeLibro>();
 
 	public void addCliente(Cliente nuevoCliente) {
 		listaDeClientes.add(nuevoCliente);
@@ -18,16 +19,15 @@ public class Libreria {
 		listaDeCompras.add(compra);
 	}
 
+	public void nuevoAlquilerDeLibro(AlquilerDeLibro alquiler){
+		listaDeAlquilerDeLibros.add(alquiler);
+	}
+
 	public double calcularMontoACobrar(String mes, Cliente miCliente) {
 		double montoACobrar = 0;
 		double montoDescuento = 0;
-		Iterator<Compra> it = listaDeCompras.iterator();
-		while(it.hasNext()){
-			Compra compraARegistrar = it.next();
-			if (compraARegistrar.getMes() == mes && compraARegistrar.getMiCliente() == miCliente){
-				montoACobrar += compraARegistrar.getNuevoProducto().getPrecio() * compraARegistrar.getCantidad();
-			}
-		}
+		montoACobrar = recorrerCompras(mes, miCliente, montoACobrar);
+		//empieza a recorrer las Suscripciones (la logica del codigo original no me permitio extraer el metodo para simplificar la visual)
 		Iterator<Suscripcion> itSuscripciones = listaDeSuscripciones.iterator();
 		while(itSuscripciones.hasNext()){
 			Suscripcion suscripcionARegistrar = itSuscripciones.next();
@@ -38,7 +38,38 @@ public class Libreria {
 				montoACobrar += suscripcionARegistrar.getNuevoProducto().getPrecio() * suscripcionARegistrar.getCantidadDeEjemplaresPorMes();
 			}
 		}
+		//termina de recorrer las suscripciones
+		montoACobrar = recorrerAlquileres(mes, miCliente, montoACobrar);
 		return montoACobrar - montoDescuento;
+	}
+
+	private double recorrerAlquileres(String mes, Cliente miCliente, double montoACobrar) {
+		Iterator<AlquilerDeLibro> alquilerIterator = this.listaDeAlquilerDeLibros.iterator();
+		while(alquilerIterator.hasNext()){
+			AlquilerDeLibro alquilerARegistrar = alquilerIterator.next();
+			if(alquilerARegistrar.getCliente() == miCliente){
+				Iterator<String> keySetIterator = alquilerARegistrar.getDineroAPagarEnDeterminadoMes().keySet().iterator();
+				while(keySetIterator.hasNext()){
+					String mesActual = keySetIterator.next();
+					if(mesActual.equals(mes)){
+						montoACobrar += alquilerARegistrar.getDineroAPagarEnDeterminadoMes().get(mesActual);
+					}
+				}
+
+			}
+		}
+		return montoACobrar;
+	}
+
+	private double recorrerCompras(String mes, Cliente miCliente, double montoACobrar) {
+		Iterator<Compra> it = listaDeCompras.iterator();
+		while(it.hasNext()){
+			Compra compraARegistrar = it.next();
+			if (compraARegistrar.getMes() == mes && compraARegistrar.getMiCliente() == miCliente){
+				montoACobrar += compraARegistrar.getNuevoProducto().getPrecio() * compraARegistrar.getCantidad();
+			}
+		}
+		return montoACobrar;
 	}
 
 	public void nuevaSuscripcion(Suscripcion nuevaSuscripcion) {
