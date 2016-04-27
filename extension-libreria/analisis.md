@@ -1,4 +1,9 @@
-Informe del trabajo extension-libreria
+Materia: AyDOO
+Año: 2016
+Alumno: Fernando Gainey
+Profesor: Nicolás Paez
+
+Informe del trabajo extension-libreria:
 
 - Los tests pasaron todos, aunque hay 9 clases, de las cuales solo tres tienen su clase de pruebas (Faltan Tests). Por lo que procedo a agregar las clases de pruebas faltantes, así asegurar de que todo siga andando bien a pesar de las modificaciones que vaya a realizar,y además verificar si estaba andando realmente bien antes.
 
